@@ -1,0 +1,5 @@
+F:\test\NewWorkbench\NewWorkbench\CommonLibrary\bin\Debug\NewWorkbench.CommonLibrary.dll
+F:\test\NewWorkbench\NewWorkbench\CommonLibrary\bin\Debug\NewWorkbench.CommonLibrary.pdb
+F:\test\NewWorkbench\NewWorkbench\CommonLibrary\bin\Debug\Newtonsoft.Json.dll
+F:\test\NewWorkbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.dll
+F:\test\NewWorkbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.pdb

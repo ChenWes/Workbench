@@ -1,0 +1,14 @@
+F:\test\NewWorkbench\NewWorkbench\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Service.dll
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Service.pdb
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.dll
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.SqlServer.dll
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.CommonLibrary.dll
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Domain.dll
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\Newtonsoft.Json.dll
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.CommonLibrary.pdb
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Domain.pdb
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.xml
+F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.SqlServer.xml
+F:\test\NewWorkbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.dll
+F:\test\NewWorkbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.pdb

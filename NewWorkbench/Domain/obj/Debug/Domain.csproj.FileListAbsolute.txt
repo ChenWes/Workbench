@@ -1,0 +1,9 @@
+F:\test\NewWorkbench\NewWorkbench\Domain\bin\Debug\NewWorkbench.Domain.dll.config
+F:\test\NewWorkbench\NewWorkbench\Domain\bin\Debug\NewWorkbench.Domain.dll
+F:\test\NewWorkbench\NewWorkbench\Domain\bin\Debug\NewWorkbench.Domain.pdb
+F:\test\NewWorkbench\NewWorkbench\Domain\bin\Debug\EntityFramework.dll
+F:\test\NewWorkbench\NewWorkbench\Domain\bin\Debug\EntityFramework.SqlServer.dll
+F:\test\NewWorkbench\NewWorkbench\Domain\bin\Debug\EntityFramework.xml
+F:\test\NewWorkbench\NewWorkbench\Domain\bin\Debug\EntityFramework.SqlServer.xml
+F:\test\NewWorkbench\NewWorkbench\Domain\obj\Debug\NewWorkbench.Domain.dll
+F:\test\NewWorkbench\NewWorkbench\Domain\obj\Debug\NewWorkbench.Domain.pdb
