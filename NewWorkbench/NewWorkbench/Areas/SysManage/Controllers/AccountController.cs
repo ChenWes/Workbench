@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using NewWorkbench.CommonLibrary;
 using NewWorkbench.Service;
+using NewWorkbench.Service.ServiceImp;
 using NewWorkbench.Domain;
 
 namespace NewWorkbench.Areas.SysManage.Controllers
@@ -38,22 +39,22 @@ namespace NewWorkbench.Areas.SysManage.Controllers
             try
             {
                 //调用登录验证接口 返回用户实体类
-                var users =UserManage.UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
-                if (users != null)
-                {
-                    //是否锁定
-                    if (users.ISCANLOGIN == 1)
-                    {
-                        json.Msg = "用户已锁定，禁止登录，请联系管理员进行解锁";
-                        return Json(json);
-                    }
-                    json.Status = "y";
+                //var users =UserManage.UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
+                //if (users != null)
+                //{
+                //    //是否锁定
+                //    if (users.ISCANLOGIN == 1)
+                //    {
+                //        json.Msg = "用户已锁定，禁止登录，请联系管理员进行解锁";
+                //        return Json(json);
+                //    }
+                //    json.Status = "y";
 
-                }
-                else
-                {
-                    json.Msg = "用户名或密码不正确";
-                }
+                //}
+                //else
+                //{
+                //    json.Msg = "用户名或密码不正确";
+                //}
 
             }
             catch (Exception e)
