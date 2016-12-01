@@ -16,13 +16,17 @@ namespace NewWorkbench.CommonLibrary
         private int CRYPTO_KEY_LENGTH = 32;
 
         private AesCryptoServiceProvider m_aesCryptoServiceProvider;
+
         private string m_message;
+
         public string Message
         {
             get { return m_message; }
             set { m_message = value; }
         }
+
         private bool m_containKey;
+
         /// <summary>
         /// True：密文中包含密钥
         /// False：密文中不包含密钥
@@ -32,17 +36,20 @@ namespace NewWorkbench.CommonLibrary
             get { return m_containKey; }
             set { m_containKey = value; }
         }
+
         public AESCrypt()
         {
             m_aesCryptoServiceProvider = new AesCryptoServiceProvider();
             m_containKey = true;
             m_message = string.Empty;
         }
+
         public AESCrypt(bool containKey)
             : this()
         {
             m_containKey = containKey;
         }
+
         private string Encrypt(string s_crypto, byte[] key)
         {
             string s_encryped = string.Empty;
@@ -69,6 +76,7 @@ namespace NewWorkbench.CommonLibrary
                 return RET_ERROR;
             }
         }
+
         /// <summary>
         /// 指定密钥对明文进行AES加密
         /// </summary>
@@ -88,6 +96,7 @@ namespace NewWorkbench.CommonLibrary
             key = string2Byte(s_key.PadRight(key.Length));
             return Encrypt(s_crypto, key);
         }
+
         /// <summary>
         /// 动态生成密钥，并对明文进行AES加密
         /// </summary>
@@ -125,6 +134,7 @@ namespace NewWorkbench.CommonLibrary
                 return RET_ERROR;
             }
         }
+
         /// <summary>
         /// 从密文中解析出密钥，并对密文进行解密
         /// </summary>
@@ -148,6 +158,7 @@ namespace NewWorkbench.CommonLibrary
             key = hexString2Byte(s_key);
             return Decrypt(s_encrypted, key);
         }
+
         /// <summary>
         /// 指定密钥，并对密文进行解密
         /// </summary>

@@ -25,7 +25,7 @@
                     new
                     {
                         @class = "form-control",
-                        @placeholder = "登录用户名",
+                        @placeholder = "UserName",
                         @maxlength = 15,
                         @required = "required"
                     })
@@ -33,7 +33,7 @@
                     new
                     {
                         @class = "form-control",
-                        @placeholder = "登录密码",
+                        @placeholder = "Password",
                         @maxlength = 12,
                         @required = "required"
                     })
@@ -50,7 +50,7 @@
                 $("#login-button").attr("disabled", "disabled");;
             },
             Success: function (result) {
-                if (result.Status == "y") {
+                if (result.Status == "Y") {
                     alert(result.Msg)
                 } else {
                     alert(result.Msg);
