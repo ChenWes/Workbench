@@ -19,7 +19,8 @@ namespace NewWorkbench.Areas.SysManage.Controllers
         #region 基本视图
         public ActionResult Index()
         {
-            ViewBag.Title = "Login";
+            ViewBag.Title = "Login - " + CommonLibrary.ConfigHelper.GetAppSettings("SystemTitle");
+            
             return View();
         }
         #endregion
