@@ -19,6 +19,7 @@ namespace NewWorkbench.Areas.SysManage.Controllers
         #region 基本视图
         public ActionResult Index()
         {
+            ViewBag.Title = "Login";
             return View();
         }
         #endregion
