@@ -144,7 +144,6 @@
     <Folder Include="Areas\ComManage\Models\" />
     <Folder Include="Areas\ComManage\Views\Shared\" />
     <Folder Include="Areas\SysManage\Models\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -173,6 +172,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\verify_code.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

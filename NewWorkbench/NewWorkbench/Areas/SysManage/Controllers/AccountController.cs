@@ -9,6 +9,9 @@ using NewWorkbench.Service.ServiceImp;
 using NewWorkbench.Service.IService;
 using NewWorkbench.Domain;
 
+
+using NewWorkbench.Models;
+
 namespace NewWorkbench.Areas.SysManage.Controllers
 {
     public class AccountController : Controller
@@ -22,17 +25,13 @@ namespace NewWorkbench.Areas.SysManage.Controllers
         #endregion
 
         #region 基本视图
+
         public ActionResult Index()
         {
             ViewBag.Title = "Login - " + CommonLibrary.ConfigHelper.GetAppSettings("SystemTitle");
 
             return View();
         }
-        #endregion
-
-        #region 帮助方法
-
-        #endregion
 
         /// <summary>
         /// 登录验证
@@ -76,5 +75,21 @@ namespace NewWorkbench.Areas.SysManage.Controllers
 
             return Json(json, JsonRequestBehavior.AllowGet);
         }
+
+        #endregion
+
+        #region 帮助方法
+
+        public FileContentResult ValidateCode()
+        {
+            string code = "";
+            System.IO.MemoryStream ms = new verify_code().Create(out code);
+            Session["gif"] = code;
+            Response.ClearContent();
+            return File(ms.ToArray(), @"image/png");
+        }
+
+        #endregion
+
     }
 }
