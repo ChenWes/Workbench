@@ -53,6 +53,14 @@
     <Compile Include="ConfigHelper\ConfigHelper.cs" />
     <Compile Include="CryptHelper\AESCrypt.cs" />
     <Compile Include="Enums\EnumsClass.cs" />
+    <Compile Include="Web\ApplicationCache.cs" />
+    <Compile Include="Web\BindDataControl.cs" />
+    <Compile Include="Web\CacheHelper.cs" />
+    <Compile Include="Web\CookieHelper.cs" />
+    <Compile Include="Web\JScript.cs" />
+    <Compile Include="Web\QueryString.cs" />
+    <Compile Include="Web\RupengPager.cs" />
+    <Compile Include="Web\SessionHelper.cs" />
     <Compile Include="JsonHelper\AjaxResult.cs" />
     <Compile Include="JsonHelper\JsonConverter.cs" />
     <Compile Include="JsonHelper\JsonHelper.cs" />
