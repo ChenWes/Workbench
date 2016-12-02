@@ -3,10 +3,11 @@ F:\test\NewWorkbench\NewWorkbench\CommonLibrary\bin\Debug\NewWorkbench.CommonLib
 F:\test\NewWorkbench\NewWorkbench\CommonLibrary\bin\Debug\Newtonsoft.Json.dll
 F:\test\NewWorkbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.dll
 F:\test\NewWorkbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.pdb
-F:\report\wes\Workbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.dll
-F:\report\wes\Workbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.pdb
 F:\report\wes\Workbench\NewWorkbench\CommonLibrary\bin\Debug\NewWorkbench.CommonLibrary.dll
 F:\report\wes\Workbench\NewWorkbench\CommonLibrary\bin\Debug\NewWorkbench.CommonLibrary.pdb
 F:\report\wes\Workbench\NewWorkbench\CommonLibrary\bin\Debug\log4net.dll
 F:\report\wes\Workbench\NewWorkbench\CommonLibrary\bin\Debug\Newtonsoft.Json.dll
 F:\report\wes\Workbench\NewWorkbench\CommonLibrary\bin\Debug\log4net.xml
+F:\report\wes\Workbench\NewWorkbench\CommonLibrary\obj\Debug\CommonLibrary.csprojResolveAssemblyReference.cache
+F:\report\wes\Workbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.dll
+F:\report\wes\Workbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.pdb

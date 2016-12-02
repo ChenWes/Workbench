@@ -15,7 +15,7 @@ namespace NewWorkbench.Areas.SysManage.Controllers
     {
         #region 声明容器
 
-        IUserManage UserManage { get; set; }
+        IUserManage UserManage = new UserManage();
 
         //CommonLibrary.Log.IExtLog log = log4net.Ext.ExtLogManager.GetLogger("dblog");
         #endregion
@@ -46,7 +46,7 @@ namespace NewWorkbench.Areas.SysManage.Controllers
             try
             {
                 //调用登录验证接口 返回用户实体类
-                var users =new UserManage().UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
+                var users =UserManage.UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
 
                 if (users != null)
                 {
