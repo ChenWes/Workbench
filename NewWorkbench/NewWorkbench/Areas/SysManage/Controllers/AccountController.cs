@@ -15,9 +15,10 @@ namespace NewWorkbench.Areas.SysManage.Controllers
     {
         #region 声明容器
 
-        IUserManage UserManage = new UserManage();
+        //IUserManage UserManage { get; set; }
 
-        //CommonLibrary.Log.IExtLog log = log4net.Ext.ExtLogManager.GetLogger("dblog");
+        CommonLibrary.Log.IExtLog log = CommonLibrary.Log.ExtLogManager.GetLogger("dblog");
+
         #endregion
 
         #region 基本视图
@@ -41,12 +42,11 @@ namespace NewWorkbench.Areas.SysManage.Controllers
         public ActionResult Login(Domain.SYS_USER item)
         {
             var json = new JsonHelper() { Msg = "登录成功", Status = "Y" };
-            string l_IP = CommonLibrary.Utils.GetIP();
 
             try
             {
                 //调用登录验证接口 返回用户实体类
-                var users =UserManage.UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
+                var users =new UserManage().UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
 
                 if (users != null)
                 {
@@ -54,23 +54,24 @@ namespace NewWorkbench.Areas.SysManage.Controllers
                     if (users.ISCANLOGIN == 1)
                     {
                         json.Msg = "用户已锁定，禁止登录，请联系管理员进行解锁";
-                        //log.Warn(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
+                        log.Warn(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
                         return Json(json);
                     }
 
                     json.Status = "Y";
-                    //log.Info(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
+                    log.Info(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
                 }
                 else
                 {
                     json.Msg = "用户名或密码不正确";
-                    //log.Error(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
+                    log.Error(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
                 }
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                json.Msg = e.Message;
+                json.Msg = ex.Message;
+                log.Info(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg, ex);
             }
 
             return Json(json, JsonRequestBehavior.AllowGet);

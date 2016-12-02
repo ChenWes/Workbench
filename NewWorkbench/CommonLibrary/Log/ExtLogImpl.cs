@@ -13,10 +13,12 @@ namespace NewWorkbench.CommonLibrary.Log
         /// The fully qualified name of this declaring type not the type of any subclass.
         /// </summary>
         private readonly static Type ThisDeclaringType = typeof(ExtLogImpl);
+
         public ExtLogImpl(ILogger logger)
             : base(logger)
         {
         }
+
         #region IExtLog 成员
 
         public void Info(string clientIP, string clientUser, string requestUri, string action, object message)
@@ -90,6 +92,7 @@ namespace NewWorkbench.CommonLibrary.Log
                 Logger.Log(loggingEvent);
             }
         }
+
         #endregion
     }
 }

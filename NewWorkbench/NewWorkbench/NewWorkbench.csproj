@@ -182,6 +182,9 @@
     <EmbeddedResource Include="Config\IndexControllers.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="db\sys_log.sql" />
+    <Content Include="db\sys_table.sql" />
+    <Content Include="db\sys_user.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
