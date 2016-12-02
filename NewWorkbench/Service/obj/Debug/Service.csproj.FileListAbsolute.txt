@@ -12,7 +12,6 @@ F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.xml
 F:\test\NewWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.SqlServer.xml
 F:\test\NewWorkbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.dll
 F:\test\NewWorkbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.pdb
-F:\report\wes\Workbench\NewWorkbench\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 F:\report\wes\Workbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Service.dll
 F:\report\wes\Workbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Service.pdb
 F:\report\wes\Workbench\NewWorkbench\Service\bin\Debug\EntityFramework.dll
@@ -26,5 +25,6 @@ F:\report\wes\Workbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Domain.pdb
 F:\report\wes\Workbench\NewWorkbench\Service\bin\Debug\EntityFramework.xml
 F:\report\wes\Workbench\NewWorkbench\Service\bin\Debug\EntityFramework.SqlServer.xml
 F:\report\wes\Workbench\NewWorkbench\Service\bin\Debug\log4net.xml
+F:\report\wes\Workbench\NewWorkbench\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 F:\report\wes\Workbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.dll
 F:\report\wes\Workbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.pdb
