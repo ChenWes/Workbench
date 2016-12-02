@@ -9,7 +9,7 @@ using System.Web.Routing;
 
 namespace NewWorkbench
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApiApplication : System.Web.HttpApplication //Spring.Web.Mvc.SpringMvcApplication //
     {
         protected void Application_Start()
         {

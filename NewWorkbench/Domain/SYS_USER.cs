@@ -14,6 +14,15 @@ namespace NewWorkbench.Domain
     
     public partial class SYS_USER
     {
+        public SYS_USER()
+        {
+            this.SYS_POST_USER = new HashSet<SYS_POST_USER>();
+            this.SYS_USER_DEPARTMENT = new HashSet<SYS_USER_DEPARTMENT>();
+            this.SYS_USER_PERMISSION = new HashSet<SYS_USER_PERMISSION>();
+            this.SYS_USER_ROLE = new HashSet<SYS_USER_ROLE>();
+            this.SYS_USERINFO = new HashSet<SYS_USERINFO>();
+        }
+    
         public int ID { get; set; }
         public string NAME { get; set; }
         public string ACCOUNT { get; set; }
@@ -31,5 +40,11 @@ namespace NewWorkbench.Domain
         public string UPDATEUSER { get; set; }
         public Nullable<System.DateTime> UPDATEDATE { get; set; }
         public string LastLoginIP { get; set; }
+    
+        public virtual ICollection<SYS_POST_USER> SYS_POST_USER { get; set; }
+        public virtual ICollection<SYS_USER_DEPARTMENT> SYS_USER_DEPARTMENT { get; set; }
+        public virtual ICollection<SYS_USER_PERMISSION> SYS_USER_PERMISSION { get; set; }
+        public virtual ICollection<SYS_USER_ROLE> SYS_USER_ROLE { get; set; }
+        public virtual ICollection<SYS_USERINFO> SYS_USERINFO { get; set; }
     }
 }

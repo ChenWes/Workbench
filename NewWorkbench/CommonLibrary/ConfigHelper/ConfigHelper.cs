@@ -2,8 +2,16 @@
 
 namespace NewWorkbench.CommonLibrary
 {
+    /// <summary>
+    /// 系统配置文件帮助类
+    /// </summary>
     public static class ConfigHelper
     {
+        /// <summary>
+        /// 获取配置值
+        /// </summary>
+        /// <param name="pi_keys"></param>
+        /// <returns></returns>
         public static string GetAppSettings(string pi_keys)
         {
             string l_getValue = string.Empty;
@@ -13,6 +21,11 @@ namespace NewWorkbench.CommonLibrary
             return l_getValue;
         }
 
+        /// <summary>
+        /// 获取连接字符串
+        /// </summary>
+        /// <param name="pi_connectionName"></param>
+        /// <returns></returns>
         public static string GetConnectionString(string pi_connectionName)
         {
             string l_getValue = string.Empty;

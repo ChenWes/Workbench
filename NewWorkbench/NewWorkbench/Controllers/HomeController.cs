@@ -10,7 +10,8 @@ namespace NewWorkbench.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Workbench";
+            ViewBag.Version = CommonLibrary.ConfigHelper.GetAppSettings("SystemVersion");
 
             return View();
         }
