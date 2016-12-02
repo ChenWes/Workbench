@@ -177,7 +177,7 @@ namespace NewWorkbench.Service.ServiceImp
             var post = users.SYS_POST_USER.ToList();
 
             //用户主部门
-            var dptInfo = this.DepartmentManage.Get(p => p.ID == users.DPTID);
+            var dptInfo =new DepartmentManage().Get(p => p.ID == users.DPTID);
 
             //用户模块
             var module = permission.Select(p => p.SYS_MODULE).ToList().Distinct(new ModuleDistinct()).ToList();

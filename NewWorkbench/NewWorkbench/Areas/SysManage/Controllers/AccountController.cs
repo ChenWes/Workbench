@@ -44,28 +44,64 @@ namespace NewWorkbench.Areas.SysManage.Controllers
 
             try
             {
-                //调用登录验证接口 返回用户实体类
-                var users =new UserManage().UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
+                #region validate code
 
-                if (users != null)
+                var code = Request.Form["Code"];
+
+                if (Session["gif"] != null)
                 {
-                    //是否锁定
-                    if (users.ISCANLOGIN == 1)
+                    if (!string.IsNullOrEmpty(code) && code.ToLower() == Session["gif"].ToString().ToLower())
                     {
-                        json.Msg = "用户已锁定，禁止登录，请联系管理员进行解锁";
-                        log.Warn(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
-                        return Json(json);
-                    }
+                        #region user login
 
-                    json.Status = "Y";
-                    log.Info(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
+                        //调用登录验证接口 返回用户实体类
+                        var users = new UserManage().UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
+
+                        if (users != null)
+                        {
+                            var account = new UserManage().GetAccountByUser(users);
+
+                            CommonLibrary.SessionHelper.SetSession("CurrentUser", account);
+
+                            //记录用户信息到Cookies
+                            string cookievalue = "{\"id\":\"" + account.Id + "\",\"username\":\"" + account.LogName +
+                                                                              "\",\"password\":\"" + account.PassWord + "\",\"ToKen\":\"" +
+                                                                              Session.SessionID + "\"}";
+                            CookieHelper.SetCookie("cookie_rememberme", new CommonLibrary.AESCrypt().Encrypt(cookievalue), null);
+                            users.LastLoginIP = Utils.GetIP();
+                            new UserManage().Update(users);
+
+                            //是否锁定
+                            //if (users.ISCANLOGIN == 1)
+                            //{
+                            //    json.Msg = "用户已锁定，禁止登录，请联系管理员进行解锁";
+                            //    log.Warn(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
+                            //    return Json(json);
+                            //}
+
+                            json.Status = "Y";
+                            json.ReUrl = "/Sys/Home/Index";
+                            log.Info(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
+                        }
+                        else
+                        {
+                            json.Msg = "用户名或密码不正确";
+                            log.Error(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
+                        }
+
+                        #endregion
+                    }
+                    else
+                    {
+                        json.Msg = "验证码不正确，请重新输入";
+                    }
                 }
                 else
                 {
-                    json.Msg = "用户名或密码不正确";
-                    log.Error(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
+                    json.Msg = "验证码已过期，请刷新验证码";
                 }
 
+                #endregion
             }
             catch (Exception ex)
             {

@@ -37,10 +37,24 @@
                         @maxlength = 12,
                         @required = "required"
                     })
+                <div class="from-control">
+                    @Html.TextBox("code","",
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Validate Code",
+                            @datetype="*",
+                            @maxlength = 4,
+                            @required = "required",
+                            @autocomplete="off"
+                        })
                     <div class="code-img">
                         <img id="imgVerify" src="/sys/account/ValidateCode" alt="点击更换" onclick="this.src=this.src+'?'" style="vertical-align:middle;" />
                     </div>  
-                    <button type="submit" id="login-button">Login</button>
+                </div>
+                    <div class="login_fields_submit">
+                        <button type="submit" id="login-button">Login</button>
+                    </div>
                 }
         </div>
     </div>
