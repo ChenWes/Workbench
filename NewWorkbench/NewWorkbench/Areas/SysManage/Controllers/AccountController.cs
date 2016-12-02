@@ -15,7 +15,8 @@ namespace NewWorkbench.Areas.SysManage.Controllers
     {
         #region 声明容器
 
-        //IUserManage UserManage { get; set; }
+        IUserManage UserManage { get; set; }
+
         //CommonLibrary.Log.IExtLog log = log4net.Ext.ExtLogManager.GetLogger("dblog");
         #endregion
 
@@ -23,7 +24,7 @@ namespace NewWorkbench.Areas.SysManage.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Login - " + CommonLibrary.ConfigHelper.GetAppSettings("SystemTitle");
-            
+
             return View();
         }
         #endregion
@@ -40,12 +41,13 @@ namespace NewWorkbench.Areas.SysManage.Controllers
         public ActionResult Login(Domain.SYS_USER item)
         {
             var json = new JsonHelper() { Msg = "登录成功", Status = "Y" };
-            string l_IP= CommonLibrary.Utils.GetIP();
+            string l_IP = CommonLibrary.Utils.GetIP();
 
             try
             {
                 //调用登录验证接口 返回用户实体类
-                var users =new  UserManage().UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
+                var users =new UserManage().UserLogin(item.ACCOUNT.Trim(), item.PASSWORD.Trim());
+
                 if (users != null)
                 {
                     //是否锁定
