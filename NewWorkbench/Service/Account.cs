@@ -73,6 +73,9 @@ namespace NewWorkbench.Service
         /// </summary>
         public List<Domain.SYS_MODULE> Modules { get; set; }
 
+
+        public List<string> System_Id { get; set; }
+
         #endregion
     }
 }

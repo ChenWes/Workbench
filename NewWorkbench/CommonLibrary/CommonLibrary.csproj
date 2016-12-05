@@ -58,6 +58,7 @@
     <Compile Include="Web\CacheHelper.cs" />
     <Compile Include="Web\CookieHelper.cs" />
     <Compile Include="Web\JScript.cs" />
+    <Compile Include="Web\MemoryCacheService.cs" />
     <Compile Include="Web\QueryString.cs" />
     <Compile Include="Web\RupengPager.cs" />
     <Compile Include="Web\SessionHelper.cs" />
