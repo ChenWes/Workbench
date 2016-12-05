@@ -28,3 +28,4 @@ F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\NewWorkbench.LocalFr
 F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\LocalFrom.csproj.GenerateResource.Cache
 F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\NewWorkbench.LocalFrom.exe
 F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\NewWorkbench.LocalFrom.pdb
+F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\bin\Debug\ICSharpCode.SharpZipLib.dll

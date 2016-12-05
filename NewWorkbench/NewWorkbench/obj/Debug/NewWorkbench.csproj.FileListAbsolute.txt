@@ -143,3 +143,4 @@ F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\EntityFramework.xml
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.pdb
+F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\ICSharpCode.SharpZipLib.dll

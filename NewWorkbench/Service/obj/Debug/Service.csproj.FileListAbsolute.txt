@@ -44,3 +44,4 @@ F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\log4net.xml
 F:\report\wes\WesWorkbench\NewWorkbench\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.pdb
+F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\ICSharpCode.SharpZipLib.dll
