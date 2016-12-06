@@ -1,0 +1,123 @@
+﻿@{
+    Layout = null;   
+}
+@model NewWorkbench.Domain.SYS_USER
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title</title>
+
+    <link href="../../Content/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../Content/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="../../Content/animate.css" rel="stylesheet">
+    <link href="../../Content/style.css?v=4.1.0" rel="stylesheet">
+
+    <link href="../../Content/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <script>if (window.top !== window.self) { window.top.location = window.location; }</script>
+</head>
+<body class="gray-bg">    
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+                <h6 class="logo-name">L</h6>
+            </div>
+            <h3>@ViewBag.Title</h3>
+            @using (Ajax.BeginForm("login", null, new AjaxOptions()
+            {
+                HttpMethod = "Post",
+                OnBegin = "dig.Loading",
+                OnSuccess = "dig.Success",
+                OnFailure = "dig.Failure",
+                OnComplete = "dig.Complete"
+            }, new { @class="form-signin"}))
+            {
+                @Html.AntiForgeryToken()                               
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.ACCOUNT, new
+                    {
+                       @class = "form-control",
+                       @placeholder = "用户名",
+                       @maxlength = 50,
+                       @required = "required"
+                   })
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(model => model.PASSWORD,new
+                    {
+                        @class = "form-control",
+                        @placeholder = "密码",
+                        @maxlength = 50,
+                        @required = "required"
+                    })
+                </div>
+                <div class="form-group">
+                    @Html.TextBox("code", "",new
+                    {
+                        @class = "form-control",
+                        @placeholder = "验证码",
+                        @datetype = "*",
+                        @maxlength = 4,
+                        @required = "required",
+                        @autocomplete = "off"
+                    })
+                </div>
+                <div class="form-group">
+                    <img id="imgVerify" src="/system/account/ValidateCode" alt="点击更换" onclick="this.src=this.src+'?'" style="vertical-align:middle;" />
+                </div>
+                <button id="login-button" type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+                <p class="text-muted text-center">
+                    <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
+                </p>                
+            }
+        </div>
+    </div>            
+
+    <!-- 全局js -->
+    <script src="../../Scripts/jquery.min.js?v=2.1.4"></script>
+    <script src="../../Scripts/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../Scripts/plugins/toastr/toastr.min.js"></script>
+
+    <script src="../../Scripts/common-notification.js"></script>
+
+    <script type="text/javascript" src="../../Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        var dig = {
+            Loading: function () {
+                $("#login-button").attr("disabled", "disabled");;
+            },
+            Success: function (result) {
+                if (result.Status == "Y") {                    
+                    ShowSuccess('登陆', result.Msg)
+                    window.top.location = result.ReUrl;
+                } else {                    
+                    ShowWarning('登陆', result.Msg)
+                    dig.Complete();
+                }
+            },
+            Failure: function () {
+                ShowWarning('登陆', result.Msg)
+                dig.Complete();
+            },
+            Complete: function () {
+                $("#login-button").attr("disabled", false);
+            },
+            ErrorMsg: function (msg) {                
+                ShowError('登陆', result.Msg)
+            }
+        };
+    </script>
+</body>
+
+</html>
+
+
+

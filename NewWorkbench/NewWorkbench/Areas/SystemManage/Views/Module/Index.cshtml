@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="ibox">
+    <a action="add">添加</a>
+    <a action="edit">修改</a>
+    <a action="detail">详情</a>
+    <a action="remove">删除</a>
+    <a action="latest">newclass</a>
+</div>
+
+
+<script type="text/javascript" src="../Scripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../Scripts/common_permission.js"></script>
+<script type="text/javascript">
+    $(function () {
+        ValidatePermission(@Html.Raw(ViewData["PermissionList"]));
+    })
+</script>

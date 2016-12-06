@@ -346,6 +346,7 @@
     <Content Include="Content\plugins\footable\fonts\footable.ttf" />
     <Content Include="Content\plugins\footable\fonts\footable.woff" />
     <Content Include="Scripts\.DS_Store" />
+    <Content Include="Scripts\common-notification.js" />
     <Content Include="Scripts\demo\bootstrap_table_test.json" />
     <Content Include="Scripts\demo\bootstrap_table_test2.json" />
     <Content Include="Scripts\demo\photos.json" />
@@ -353,7 +354,7 @@
     <Content Include="Content\img\.DS_Store" />
     <Content Include="Content\img\browser.psd" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\common_permission.js" />
+    <Content Include="Scripts\common-permission.js" />
     <Content Include="Scripts\contabs.js" />
     <Content Include="Scripts\content.js" />
     <Content Include="Scripts\demo\bootstrap-table-demo.js" />
