@@ -74,7 +74,7 @@ namespace NewWorkbench.Controllers
             //1、判断模块是否对应
             if (string.IsNullOrEmpty(ModuleAlias))
             {
-                filterContext.HttpContext.Response.Write(" <script type='text/javascript'> alert('该页面暂不允许公开访问！'); </script>");
+                filterContext.HttpContext.Response.Write(" <script type='text/javascript'> alert('该页面暂不开放访问！'); </script>");
                 filterContext.RequestContext.HttpContext.Response.End();
                 filterContext.Result = new EmptyResult();
                 return;

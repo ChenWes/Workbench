@@ -105,7 +105,7 @@ namespace NewWorkbench.Controllers
             if (filterContext.HttpContext.Session == null)
             {
                 filterContext.HttpContext.Response.Write(
-                        " <script type='text/javascript'> alert('~登录已过期，请重新登录');window.top.location='/system/account/login'; </script>");
+                        " <script type='text/javascript'> alert('登录已过期，请重新登录');window.top.location='/system/account/'; </script>");
                 filterContext.RequestContext.HttpContext.Response.End();
                 filterContext.Result = new EmptyResult();
                 return;
@@ -115,7 +115,7 @@ namespace NewWorkbench.Controllers
             if (this.CurrentUser == null)
             {
                 filterContext.HttpContext.Response.Write(
-                    " <script type='text/javascript'> alert('登录已过期，请重新登录'); window.top.location='/system/account/login';</script>");
+                    " <script type='text/javascript'> alert('登录已过期，请重新登录'); window.top.location='/system/account/';</script>");
                 filterContext.RequestContext.HttpContext.Response.End();
                 filterContext.Result = new EmptyResult();
                 return;

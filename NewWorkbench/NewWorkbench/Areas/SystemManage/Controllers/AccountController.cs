@@ -28,7 +28,7 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
 
         #endregion
 
-        #region 基本视图   
+        #region 基本视图
      
         public ActionResult Index()
         {
@@ -90,7 +90,7 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
                             #endregion
 
                             json.Status = "Y";
-                            json.ReUrl = "/Home";
+                            json.ReUrl = "/System/Home";
                             log.Info(Utils.GetIP(), item.ACCOUNT, Request.Url.ToString(), "Login", "系统登录，登录结果：" + json.Msg);
                         }
                         else

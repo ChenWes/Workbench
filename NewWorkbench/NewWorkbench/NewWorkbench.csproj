@@ -169,6 +169,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\SystemManage\Controllers\AccountController.cs" />
+    <Compile Include="Areas\SystemManage\Controllers\HomeController.cs" />
     <Compile Include="Areas\SystemManage\Controllers\ModuleController.cs" />
     <Compile Include="Areas\SystemManage\SystemManageAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -353,6 +354,7 @@
     <Content Include="Scripts\demo\table_base.json" />
     <Content Include="Content\img\.DS_Store" />
     <Content Include="Content\img\browser.psd" />
+    <Content Include="Areas\SystemManage\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\common-permission.js" />
     <Content Include="Scripts\contabs.js" />
