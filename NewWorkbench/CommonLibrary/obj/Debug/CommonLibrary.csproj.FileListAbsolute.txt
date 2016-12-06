@@ -18,3 +18,4 @@ F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\log4net.xml
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.dll
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\obj\Debug\CommonLibrary.csprojResolveAssemblyReference.cache
