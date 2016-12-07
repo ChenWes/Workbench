@@ -47,7 +47,7 @@
                        @class = "form-control",
                        @placeholder = "用户名",
                        @maxlength = 50,
-                       @required = "required"
+                       @required = "required"                       
                    })
                 </div>
                 <div class="form-group">
@@ -92,7 +92,7 @@
     <script type="text/javascript">
         var dig = {
             Loading: function () {
-                $("#login-button").attr("disabled", "disabled");;
+                $("#login-button").attr("disabled", "disabled");
             },
             Success: function (result) {
                 if (result.Status == "Y") {                    
