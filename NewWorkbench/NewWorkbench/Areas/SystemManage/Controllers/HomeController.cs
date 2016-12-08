@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using NewWorkbench.Controllers;
+using NewWorkbench.Service.ServiceImp;
 
 namespace NewWorkbench.Areas.SystemManage.Controllers
 {
@@ -23,7 +24,11 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
             ViewBag.Account = this.CurrentUser.Name;
             ViewBag.AccountImg = "/Content/img/profile_small.jpg";
 
+            ViewData["Module"] = new ModuleManage().GetModule(CurrentUser.Id, CurrentUser.Permissions, CurrentUser.System_Id);
+
+
             return View();
-        }
+        }   
+             
 	}
 }

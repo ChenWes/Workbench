@@ -83,8 +83,7 @@ namespace NewWorkbench.Service.ServiceImp
         }
 
         /// <summary>
-        /// 递归模块列表，返回按级别排序
-        /// add yuangang by 2015-06-03
+        /// 递归模块列表，返回按级别排序        
         /// </summary>
         public List<Domain.SYS_MODULE> RecursiveModule(List<Domain.SYS_MODULE> list)
         {
@@ -97,8 +96,7 @@ namespace NewWorkbench.Service.ServiceImp
         }
 
         /// <summary>
-        /// 递归模块列表
-        /// add yuangang by 2015-06-03
+        /// 递归模块列表       
         /// </summary>
         private void ChildModule(List<Domain.SYS_MODULE> list, List<Domain.SYS_MODULE> newlist, int parentId)
         {

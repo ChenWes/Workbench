@@ -128,8 +128,8 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
 
         public ActionResult LoginOut()
         {
-            SessionHelper.Remove("CurrentUser");
-            return View("login");
+            SessionHelper.Remove("CurrentUser");            
+            return View("index");
         }
 
         #endregion
