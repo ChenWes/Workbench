@@ -29,3 +29,5 @@ F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\LocalFrom.csproj.Gen
 F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\NewWorkbench.LocalFrom.exe
 F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\NewWorkbench.LocalFrom.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\NewWorkbench.LocalFrom.FrmPinyin.resources
+F:\report\wes\WesWorkbench\NewWorkbench\LocalFrom\obj\Debug\NewWorkbench.LocalFrom.FrmZip.resources

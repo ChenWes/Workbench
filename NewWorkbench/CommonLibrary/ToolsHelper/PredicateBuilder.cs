@@ -37,6 +37,7 @@ namespace NewWorkbench.CommonLibrary
         {
             return expr1.Compose(expr2, Expression.And);
         }
+
         public static Expression<T> Compose<T>(this Expression<T> first, Expression<T> second, Func<Expression, Expression, Expression> merge)
         {
             // build parameter map (from parameters of second to parameters of first)  
@@ -49,6 +50,7 @@ namespace NewWorkbench.CommonLibrary
             return Expression.Lambda<T>(merge(first.Body, secondBody), first.Parameters);
         }
     }
+
     public class ParameterRebinder : ExpressionVisitor
     {
         private readonly Dictionary<ParameterExpression, ParameterExpression> map;

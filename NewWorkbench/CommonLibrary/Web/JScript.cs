@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace NewWorkbench.CommonLibrary.help
+namespace NewWorkbench.CommonLibrary
 {
     /// <summary>
     /// 一些常用的Js调用

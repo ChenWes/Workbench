@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NewWorkbench.CommonLibrary.StringHelper
 {
-    public class ConvertHzToPz
+    /// <summary>
+    /// 处理字符串拼音
+    /// </summary>
+    public static class ConvertHzToPz
     {
         #region 拼音数组
 
@@ -2391,6 +2394,12 @@ namespace NewWorkbench.CommonLibrary.StringHelper
 
         #endregion
 
+        /// <summary>
+        /// 将字符串全都变成拼音
+        /// 例如，你好-->NiHao
+        /// </summary>
+        /// <param name="str">中文字符串</param>
+        /// <returns></returns>
         public static string Convert(string str)
         {
             if (str == null)
@@ -2441,6 +2450,12 @@ namespace NewWorkbench.CommonLibrary.StringHelper
             return stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// 将字符串的拼音首字母合并
+        /// 例如，你好吗-->NHM
+        /// </summary>
+        /// <param name="str">中文字符串</param>
+        /// <returns></returns>
         public static string ConvertFirst(string str)
         {
             if (str == null)

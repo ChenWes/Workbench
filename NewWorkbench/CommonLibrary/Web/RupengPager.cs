@@ -5,7 +5,7 @@ using System.Web;
 using System.Text;
 using System.Diagnostics;
 
-namespace NewWorkbench.CommonLibrary.help
+namespace NewWorkbench.CommonLibrary
 {
     /// <summary>
     /// 分页组件调用实例

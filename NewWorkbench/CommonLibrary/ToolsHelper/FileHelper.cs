@@ -8,14 +8,13 @@ using System.Web;
 
 namespace NewWorkbench.CommonLibrary.ToolsHelper
 {
-    public class FileHelper
+    public static class FileHelper
     {
         /// <summary>
         /// 获取目录下所有文件（包含子目录）
         /// </summary>
         /// <param name="Path"></param>
         /// <returns></returns>
-
         public static DataTable GetAllFileTable(string Path)
         {
             DataTable dt = new DataTable();
@@ -398,7 +397,7 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             }
         }
 
-        public bool FileMove(string source, string destination)
+        public static bool FileMove(string source, string destination)
         {
             bool result = false;
             FileInfo fileInfo = new FileInfo(source);
@@ -485,6 +484,11 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             return directories;
         }
 
+        /// <summary>
+        /// 获取文件容量大小
+        /// </summary>
+        /// <param name="fi"></param>
+        /// <returns></returns>
         public static string GetDiyFileSize(FileInfo fi)
         {
             string result = string.Empty;
@@ -563,6 +567,11 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             return "/" + text;
         }
 
+        /// <summary>
+        /// 获取文件的图标
+        /// </summary>
+        /// <param name="_fileExt"></param>
+        /// <returns></returns>
         public static string GetFileIcon(string _fileExt)
         {
             List<string> list = (from p in ConfigurationManager.AppSettings["Image"].Trim(new char[]
