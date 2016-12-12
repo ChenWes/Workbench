@@ -20,7 +20,7 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
             ViewBag.Search = base.keywords;
             ViewData["System"] = systems;
 
-            ViewData["Systemlist"] = new Service.ServiceImp.SystemManage().LoadSystemInfo(CurrentUser.System_Id);
+            ViewData["Systemlist"] = new Service.ServiceImp.SystemManage().LoadSystemInfo(CurrentUser.System_Id);            
 
             return View(BindList(systems));
         }
@@ -38,7 +38,7 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
             else
             {
                 //选择全部 查询所有用户所属系统的模块
-                //query = query.Where(p => this.CurrentUser.System_Id.any(e => e == p.FK_BELONGSYSTEM));
+                query = query.Where(p => this.CurrentUser.System_Id.Any(e => e == p.FK_BELONGSYSTEM));
             }
 
             //递归排序（无分页）
@@ -52,6 +52,7 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
                     p.SHOWORDER,
                     p.ICON,
                     MODULETYPE = ((CommonLibrary.Enums.enumModuleType)p.MODULETYPE).ToString(),
+                    ISSHOW = p.ISSHOW==1 ? "显示" : "隐藏",
                     p.NAME,
                     SYSNAME = p.SYS_SYSTEM.NAME,
                     p.FK_BELONGSYSTEM

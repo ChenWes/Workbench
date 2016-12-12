@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\report\wes\Workbench\NewWorkbench\Domain\NewWorkbench.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\report\wes\WesWorkbench\NewWorkbench\Domain\NewWorkbench.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

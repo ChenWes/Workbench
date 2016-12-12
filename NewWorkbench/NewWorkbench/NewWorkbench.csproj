@@ -758,6 +758,7 @@
     <Content Include="Scripts\plugins\suggest\data.json" />
     <Content Include="Scripts\plugins\webuploader\.DS_Store" />
     <Content Include="Scripts\plugins\webuploader\README.md" />
+    <Content Include="Views\Shared\_LayoutSingle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">

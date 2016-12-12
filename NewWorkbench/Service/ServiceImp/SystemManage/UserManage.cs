@@ -183,6 +183,8 @@ namespace NewWorkbench.Service.ServiceImp
             //用户模块
             var module = permission.Select(p => p.SYS_MODULE).ToList().Distinct(new ModuleDistinct()).ToList();
 
+            var systemid = new List<string> { "D79BA703-5CA3-439E-9EFC-8CC140D723E0" };
+
             Account account = new Account()
             {
                 Id = users.ID,
@@ -196,7 +198,8 @@ namespace NewWorkbench.Service.ServiceImp
                 Permissions = permission,
                 Roles = role,
                 PostUser = post,
-                Modules = module
+                Modules = module,
+                System_Id = systemid
             };
             return account;
         }

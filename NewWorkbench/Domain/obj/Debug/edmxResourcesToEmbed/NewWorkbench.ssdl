@@ -26,6 +26,23 @@
     <Property Name="NAME" Type="nvarchar" MaxLength="200" />
     <Property Name="LEVELS" Type="tinyint" Nullable="false" />
   </EntityType>
+  <EntityType Name="SYS_COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="Title" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SYS_COMPANY_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMPANY_ID" Type="int" />
+    <Property Name="DEPARTMENT_ID" Type="nvarchar" MaxLength="36" />
+  </EntityType>
   <EntityType Name="SYS_DEPARTMENT">
     <Key>
       <PropertyRef Name="ID" />
@@ -187,6 +204,24 @@
     <Property Name="USER_ID" Type="int" Nullable="false" />
     <Property Name="DEPARTMENT_ID" Type="nvarchar" MaxLength="36" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewDB.dbo.SYS_USER_ONLINE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SYS_USER_ONLINE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FK_UserId" />
+      <PropertyRef Name="OnlineDate" />
+      <PropertyRef Name="IsOnline" />
+      <PropertyRef Name="UserIP" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConnectId" Type="nvarchar" MaxLength="500" />
+    <Property Name="FK_UserId" Type="int" Nullable="false" />
+    <Property Name="OnlineDate" Type="datetime" Nullable="false" />
+    <Property Name="OfflineDate" Type="datetime" />
+    <Property Name="IsOnline" Type="bit" Nullable="false" />
+    <Property Name="UserIP" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="SYS_USER_PERMISSION">
     <Key>
       <PropertyRef Name="ID" />
@@ -245,6 +280,30 @@
     <Property Name="UPDATEDATE" Type="datetime" />
     <Property Name="UPDATEUSER" Type="nvarchar" MaxLength="36" />
   </EntityType>
+  <Association Name="FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY">
+    <End Role="SYS_COMPANY" Type="Self.SYS_COMPANY" Multiplicity="0..1" />
+    <End Role="SYS_COMPANY_DEPARTMENT" Type="Self.SYS_COMPANY_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYS_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SYS_COMPANY_DEPARTMENT">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT">
+    <End Role="SYS_DEPARTMENT" Type="Self.SYS_DEPARTMENT" Multiplicity="0..1" />
+    <End Role="SYS_COMPANY_DEPARTMENT" Type="Self.SYS_COMPANY_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYS_DEPARTMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SYS_COMPANY_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_SYS_MODULE_SYSTEMID">
     <End Role="SYS_SYSTEM" Type="Self.SYS_SYSTEM" Multiplicity="1" />
     <End Role="SYS_MODULE" Type="Self.SYS_MODULE" Multiplicity="*" />
@@ -365,6 +424,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_SYS_USER_ONLINE_SYS_USER">
+    <End Role="SYS_USER" Type="Self.SYS_USER" Multiplicity="1" />
+    <End Role="SYS_USER_ONLINE" Type="Self.SYS_USER_ONLINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYS_USER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SYS_USER_ONLINE">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_SYS_USER_PERMISSION_PERID">
     <End Role="SYS_PERMISSION" Type="Self.SYS_PERMISSION" Multiplicity="1" />
     <End Role="SYS_USER_PERMISSION" Type="Self.SYS_USER_PERMISSION" Multiplicity="*" />
@@ -428,6 +499,8 @@
   <EntityContainer Name="NewDBModelStoreContainer">
     <EntitySet Name="SYS_CODE" EntityType="Self.SYS_CODE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYS_CODE_AREA" EntityType="Self.SYS_CODE_AREA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYS_COMPANY" EntityType="Self.SYS_COMPANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYS_COMPANY_DEPARTMENT" EntityType="Self.SYS_COMPANY_DEPARTMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYS_DEPARTMENT" EntityType="Self.SYS_DEPARTMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYS_LOG" EntityType="Self.SYS_LOG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYS_MODULE" EntityType="Self.SYS_MODULE" Schema="dbo" store:Type="Tables" />
@@ -443,6 +516,25 @@
     <EntitySet Name="SYS_USER_PERMISSION" EntityType="Self.SYS_USER_PERMISSION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYS_USER_ROLE" EntityType="Self.SYS_USER_ROLE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SYS_USERINFO" EntityType="Self.SYS_USERINFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYS_USER_ONLINE" EntityType="Self.SYS_USER_ONLINE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SYS_USER_ONLINE].[ID] AS [ID], 
+    [SYS_USER_ONLINE].[ConnectId] AS [ConnectId], 
+    [SYS_USER_ONLINE].[FK_UserId] AS [FK_UserId], 
+    [SYS_USER_ONLINE].[OnlineDate] AS [OnlineDate], 
+    [SYS_USER_ONLINE].[OfflineDate] AS [OfflineDate], 
+    [SYS_USER_ONLINE].[IsOnline] AS [IsOnline], 
+    [SYS_USER_ONLINE].[UserIP] AS [UserIP]
+    FROM [dbo].[SYS_USER_ONLINE] AS [SYS_USER_ONLINE]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY" Association="Self.FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY">
+      <End Role="SYS_COMPANY" EntitySet="SYS_COMPANY" />
+      <End Role="SYS_COMPANY_DEPARTMENT" EntitySet="SYS_COMPANY_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT" Association="Self.FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT">
+      <End Role="SYS_DEPARTMENT" EntitySet="SYS_DEPARTMENT" />
+      <End Role="SYS_COMPANY_DEPARTMENT" EntitySet="SYS_COMPANY_DEPARTMENT" />
+    </AssociationSet>
     <AssociationSet Name="FK_SYS_MODULE_SYSTEMID" Association="Self.FK_SYS_MODULE_SYSTEMID">
       <End Role="SYS_SYSTEM" EntitySet="SYS_SYSTEM" />
       <End Role="SYS_MODULE" EntitySet="SYS_MODULE" />
@@ -482,6 +574,10 @@
     <AssociationSet Name="FK_SYS_USER_DEPARTMENT_USERID" Association="Self.FK_SYS_USER_DEPARTMENT_USERID">
       <End Role="SYS_USER" EntitySet="SYS_USER" />
       <End Role="SYS_USER_DEPARTMENT" EntitySet="SYS_USER_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYS_USER_ONLINE_SYS_USER" Association="Self.FK_SYS_USER_ONLINE_SYS_USER">
+      <End Role="SYS_USER" EntitySet="SYS_USER" />
+      <End Role="SYS_USER_ONLINE" EntitySet="SYS_USER_ONLINE" />
     </AssociationSet>
     <AssociationSet Name="FK_SYS_USER_PERMISSION_PERID" Association="Self.FK_SYS_USER_PERMISSION_PERID">
       <End Role="SYS_PERMISSION" EntitySet="SYS_PERMISSION" />

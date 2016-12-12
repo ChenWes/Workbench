@@ -50,6 +50,7 @@
     <Compile Include="Account.cs" />
     <Compile Include="DatabaseExtensions.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IService\SystemManage\ICodeManage.cs" />
     <Compile Include="IService\SystemManage\IDepartmentManage.cs" />
     <Compile Include="IService\SystemManage\IModuleManage.cs" />
     <Compile Include="IService\SystemManage\IPermissionManage.cs" />
@@ -57,11 +58,13 @@
     <Compile Include="IService\SystemManage\ISystemManage.cs" />
     <Compile Include="IService\SystemManage\IUserDepartmentManage.cs" />
     <Compile Include="IService\SystemManage\IUserInfoManage.cs" />
+    <Compile Include="IService\SystemManage\IUserOnlineManage.cs" />
     <Compile Include="IService\SystemManage\IUserPermissionManage.cs" />
     <Compile Include="IService\SystemManage\IUserRoleManage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="IService\SystemManage\IUserManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\CodeManage.cs" />
     <Compile Include="ServiceImp\SystemManage\DepartmentManage.cs" />
     <Compile Include="ServiceImp\SystemManage\ModuleManage.cs" />
     <Compile Include="ServiceImp\SystemManage\PermissionManage.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="ServiceImp\SystemManage\UserDepartmentManage.cs" />
     <Compile Include="ServiceImp\SystemManage\UserInfoManage.cs" />
     <Compile Include="ServiceImp\SystemManage\UserManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\UserOnlineManage.cs" />
     <Compile Include="ServiceImp\SystemManage\UserPermissionManage.cs" />
     <Compile Include="ServiceImp\SystemManage\UserRoleManage.cs" />
   </ItemGroup>

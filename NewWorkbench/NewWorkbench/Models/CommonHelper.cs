@@ -82,5 +82,10 @@ namespace NewWorkbench.Models
             }
             return false;
         }
+
+        public string GetUserZW(string levels)
+        {
+            return new CodeManage().Get((SYS_CODE m) => m.CODEVALUE == levels && m.CODETYPE == "ZW").NAMETEXT;
+        }
     }
 }

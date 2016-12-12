@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <link href="/Content/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Content/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/Content/animate.css" rel="stylesheet">
+    <link href="/Content/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+<body class="gray-bg">
+    @RenderBody()
+</body>
+</html>
+    <!-- 全局js -->
+    <script src="/Scripts/jquery.min.js?v=2.1.4"></script>
+    <script src="/Scripts/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="/Scripts/content.js?v=1.0.0"></script>
+
+    <!-- Flot -->
+    <script src="/Scripts/plugins/flot/jquery.flot.js"></script>
+    <script src="/Scripts/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="/Scripts/plugins/flot/jquery.flot.resize.js"></script>
+    <!-- ChartJS-->
+    <script src="/Scripts/plugins/chartJs/Chart.min.js"></script>
+    <!-- Peity -->
+    <script src="/Scripts/plugins/peity/jquery.peity.min.js"></script>
+    <!-- Peity demo -->
+    <script src="/Scripts/demo/peity-demo.js"></script>
+
+    <!--Permission-->
+    <script src="/Scripts/common-permission.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            ValidatePermission(@Html.Raw(ViewData["PermissionList"]));
+        });
+    </script>
+    @RenderSection("scripts", required: false)

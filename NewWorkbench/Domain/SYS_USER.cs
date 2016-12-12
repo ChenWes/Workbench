@@ -21,6 +21,7 @@ namespace NewWorkbench.Domain
             this.SYS_USER_PERMISSION = new HashSet<SYS_USER_PERMISSION>();
             this.SYS_USER_ROLE = new HashSet<SYS_USER_ROLE>();
             this.SYS_USERINFO = new HashSet<SYS_USERINFO>();
+            this.SYS_USER_ONLINE = new HashSet<SYS_USER_ONLINE>();
         }
     
         public int ID { get; set; }
@@ -46,5 +47,6 @@ namespace NewWorkbench.Domain
         public virtual ICollection<SYS_USER_PERMISSION> SYS_USER_PERMISSION { get; set; }
         public virtual ICollection<SYS_USER_ROLE> SYS_USER_ROLE { get; set; }
         public virtual ICollection<SYS_USERINFO> SYS_USERINFO { get; set; }
+        public virtual ICollection<SYS_USER_ONLINE> SYS_USER_ONLINE { get; set; }
     }
 }
