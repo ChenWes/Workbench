@@ -15,7 +15,7 @@ function ValidatePermission(v) {
         //变成小写
         permission = permission.toLowerCase();
 
-        $('.ibox a[action]').each(function () {
+        $('.ibox button[action]').each(function () {
             //获取按钮属性
             var action = $(this).attr('action');
 
@@ -25,7 +25,7 @@ function ValidatePermission(v) {
                 $(this).remove();
             }
 
-            //
+            //列表中的操作按钮
             $('.ibox a[listaction]').each(function () {
                 var listaction = $(this).attr('listaction');
 
