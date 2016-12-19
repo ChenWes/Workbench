@@ -307,6 +307,8 @@
     <Content Include="Content\plugins\treeview\bootstrap-treeview.css" />
     <Content Include="Content\plugins\webuploader\webuploader.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="Content\toastr\toastr.min.css" />
     <Content Include="db\sys_log.sql" />
     <Content Include="db\sys_table.sql" />
     <Content Include="db\sys_user.sql" />
@@ -314,6 +316,11 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\admin\common.js" />
+    <Content Include="Scripts\admin\datatables\colResizable-1.5.min.js" />
+    <Content Include="Scripts\admin\datatables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\admin\datatables\jquery.dataTables.js" />
+    <Content Include="Scripts\admin\icheck.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -348,7 +355,6 @@
     <Content Include="Content\plugins\footable\fonts\footable.ttf" />
     <Content Include="Content\plugins\footable\fonts\footable.woff" />
     <Content Include="Scripts\.DS_Store" />
-    <Content Include="Scripts\common-notification.js" />
     <Content Include="Scripts\demo\bootstrap_table_test.json" />
     <Content Include="Scripts\demo\bootstrap_table_test2.json" />
     <Content Include="Scripts\demo\photos.json" />
@@ -356,8 +362,8 @@
     <Content Include="Content\img\.DS_Store" />
     <Content Include="Content\img\browser.psd" />
     <Content Include="Areas\SystemManage\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SystemManage\Views\Module\Detail.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\common-permission.js" />
     <Content Include="Scripts\contabs.js" />
     <Content Include="Scripts\content.js" />
     <Content Include="Scripts\demo\bootstrap-table-demo.js" />
@@ -372,6 +378,7 @@
     <Content Include="Scripts\demo\sparkline-demo.js" />
     <Content Include="Scripts\demo\treeview-demo.js" />
     <Content Include="Scripts\demo\webuploader-demo.js" />
+    <Content Include="Scripts\dialog-plus-min.js" />
     <Content Include="Scripts\hplus.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -382,6 +389,15 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validateform.js" />
+    <Content Include="Scripts\laydate\laydate.js" />
+    <Content Include="Scripts\laydate\need\laydate.css" />
+    <Content Include="Scripts\laydate\skins\dahong\icon.png" />
+    <Content Include="Scripts\laydate\skins\dahong\laydate.css" />
+    <Content Include="Scripts\laydate\skins\default\icon.png" />
+    <Content Include="Scripts\laydate\skins\default\laydate.css" />
+    <Content Include="Scripts\laydate\skins\molv\icon.png" />
+    <Content Include="Scripts\laydate\skins\molv\laydate.css" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\plugins\beautifyhtml\beautifyhtml.js" />
     <Content Include="Scripts\plugins\blueimp\jquery.blueimp-gallery.min.js" />
@@ -729,6 +745,16 @@
     <Content Include="Scripts\plugins\webuploader\webuploader.withoutimage.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\select2\select2-spinner.gif" />
+    <Content Include="Scripts\select2\select2.css" />
+    <Content Include="Scripts\select2\select2.min.js" />
+    <Content Include="Scripts\select2\select2.png" />
+    <Content Include="Scripts\select2\select2x2.png" />
+    <Content Include="Scripts\select2\spinner.gif" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Scripts\switchery\switchery.min.css" />
+    <Content Include="Scripts\switchery\switchery.min.js" />
+    <Content Include="Scripts\toastr\toastr.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

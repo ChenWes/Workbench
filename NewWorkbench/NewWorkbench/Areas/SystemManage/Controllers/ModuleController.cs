@@ -25,6 +25,13 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
             return View(BindList(systems));
         }
 
+
+        [UserAuthorizeAttribute(ModuleAlias = "Module", OperaAction = "Detail")]
+        public ActionResult Detail()
+        {
+            return View();
+        }
+
         private object BindList(string systems)
         {
             //预加载所有模块（二级缓存）

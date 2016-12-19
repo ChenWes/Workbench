@@ -8,24 +8,20 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h5>模块管理</h5>
-                    <div class="ibox-tools">       
-                        
-                        <button type="button" action="aaa" class="btn btn-primary btn-sm">
+                    <div class="ibox-tools">  
+                        <button id="insert" type="button" action="www" class="btn btn-primary btn-sm">
+                            <i class="fa fa-plus-circle fa-fw"></i>
+                            创建
+                        </button>                                                                                             
+                        <button id="insert" type="button" action="add" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="创建新模块">
                             <i class="fa fa-plus-circle fa-fw"></i>
                             创建
                         </button>
-                                         
-                        <button type="button" action="add" class="btn btn-primary btn-sm">
-                            <i class="fa fa-plus-circle fa-fw"></i>
-                            创建新模块
-                        </button>
-
-                        <button type="button" action="edit" class="btn btn-warning btn-sm">
+                        <button id="modify" type="button" action="edit" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="编辑选择模块">
                             <i class="fa fa-pencil fa-fw"></i>
                             编辑
                         </button>
-
-                        <button type="button" action="remove" class="btn btn-danger btn-sm">
+                        <button id="delete" type="button" actionurl="/system/module/delete" action="remove" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="删除选择模块">
                             <i class="fa fa-trash-o fa-fw"></i>
                             删除
                         </button>                        
@@ -52,7 +48,7 @@
                                                 @{
                                                     foreach (var item in ViewData["Systemlist"] as dynamic)
                                                     {
-                                                            <option value="@item.ID" @(ViewData["System"] != null && ViewData["System"].ToString() != "" && ViewData["System"].ToString() == item.ID ? "selected=\"selected\"" : "")>@item.NAME</option>
+                                                        <option value="@item.ID" @(ViewData["System"] != null && ViewData["System"].ToString() != "" && ViewData["System"].ToString() == item.ID ? "selected=\"selected\"" : "")>@item.NAME</option>
                                                     }
                                                 }
                                             </select>
@@ -64,7 +60,7 @@
                                     <div class="input-group">
                                         @Html.TextBox("Search", null, new { @class = "input-sm form-control", @placeholder = "请输入查询关键词" })
                                         <span class="input-group-btn">
-                                            <button type="submit" onclick="submit()" class="btn btn-sm btn-primary"> 搜索</button>
+                                            <button type="submit" onclick="submit()" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="left" title="点击按指定结果搜索模块">搜索</button>
                                         </span>
                                     </div>
                                 </div>
@@ -91,7 +87,7 @@
                                             <td class="tn"><input name="checkbox_name" class="icheck_box" type="checkbox" value="@item.ID"></td>
                                             <td>@item.SYSNAME</td>
                                             <td style="text-align:left">
-                                                <a href="javascript:EditModule('@item.ID')" listaction="detail" data-toggle="tooltip" data-placement="right" title="修改"><i class="@item.ICON">　</i> @Html.Raw(item.MODULENAME)</a>
+                                                <a href="javascript:EditModule('@item.ID')" listaction="detail" data-toggle="tooltip" data-placement="right" title="点击进行修改"><i class="@item.ICON">　</i> @Html.Raw(item.MODULENAME)</a>
                                             </td>
                                             <td>@item.ALIAS</td>
                                             <td>@item.MODULETYPE</td>
@@ -113,3 +109,58 @@
         </div>
     </div>
 </div>
+@section scripts{
+<script type="text/javascript">
+    $(function () {
+        //添加新模块
+        $("#insert").click(function () {
+            dig.addPage("添加新模块", "/System/Module/Detail", 1000, 450, function () {
+                if (this.returnValue == 'yes') {
+                    location.reload();
+                }
+            });
+        });
+
+        //列表选择修改
+        $('#modify').click(function () {
+            var vals = '';
+            var num = 0;
+            $('input[name="checkbox_name"]:checked').each(function () {
+                vals = $(this).val();
+                num++;
+            });
+            if (!vals) {
+                dig.error("请选中您要操作的记录！");
+                return;
+            }
+            if (num > 1) {
+                dig.error("每次只能修改一条记录！");
+                return;
+            }
+            dig.addPage("编辑模块", "/Sys/Module/detail/" + vals, 700, 450, function () {
+                if (this.returnValue == 'yes') {
+                    location.reload();
+                }
+            });
+        });
+    });
+
+    //添加子模块
+    function AddChild(n, e) {
+        dig.addPage("添加子模块", "/sys/module/detail?parentId=" + n + "&sys=" + e, 1000, 450, function () {
+            if (this.returnValue == 'yes') {
+                location.reload();
+            }
+        });
+    }
+    //跳转修改
+    function EditModule(n) {
+        dig.addPage("编辑模块", "/sys/module/detail/" + n, 1000, 450, function () {
+            if (this.returnValue == 'yes') {
+                location.reload();
+            }
+        });
+    }
+
+</script>
+}

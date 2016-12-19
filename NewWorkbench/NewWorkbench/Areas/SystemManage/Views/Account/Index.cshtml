@@ -86,7 +86,7 @@
     <script src="/Scripts/bootstrap.min.js?v=3.3.6"></script>
     <script src="/Scripts/plugins/toastr/toastr.min.js"></script>
 
-    <script src="/Scripts/common-notification.js"></script>
+    <script src="/Scripts/admin/common.js"></script>
     <script type="text/javascript" src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 
     <script type="text/javascript">
@@ -96,22 +96,22 @@
             },
             Success: function (result) {
                 if (result.Status == "Y") {                    
-                    ShowSuccess('登陆', result.Msg)
+                    toasSuccess.info_t(result.Msg);
                     window.top.location = result.ReUrl;
                 } else {                    
-                    ShowWarning('登陆', result.Msg)
+                    toasWarning.info_t(result.Msg);
                     dig.Complete();
                 }
             },
             Failure: function () {
-                ShowWarning('登陆', result.Msg)
+                toasError.info_t(result.Msg);
                 dig.Complete();
             },
             Complete: function () {
                 $("#login-button").attr("disabled", false);
             },
             ErrorMsg: function (msg) {                
-                ShowError('登陆', result.Msg)
+                toasError.info_t(result.Msg);
             }
         };
     </script>
