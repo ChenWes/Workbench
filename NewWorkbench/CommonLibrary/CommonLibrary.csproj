@@ -59,7 +59,11 @@
     <Compile Include="CryptHelper\DESEncrypt.cs" />
     <Compile Include="CryptHelper\HashCode.cs" />
     <Compile Include="CryptHelper\RSACryption.cs" />
+    <Compile Include="DateTime\DateFormat.cs" />
+    <Compile Include="DateTime\TimeHelper.cs" />
+    <Compile Include="DateTime\TimeParser.cs" />
     <Compile Include="Enums\EnumsClass.cs" />
+    <Compile Include="ToolsHelper\FileDownHelper.cs" />
     <Compile Include="StringHelper\ConvertHzToPz.cs" />
     <Compile Include="ToolsHelper\FileHelper.cs" />
     <Compile Include="ToolsHelper\PredicateBuilder.cs" />

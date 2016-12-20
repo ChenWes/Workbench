@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NewWorkbench.CommonLibrary
 {
+    /// <summary>
+    /// Describe：缓存实现类 MemoryCache        
+    /// </summary>
     //public class MemoryCacheService : ICacheService
     //{
     //    protected IMemoryCache _cache;

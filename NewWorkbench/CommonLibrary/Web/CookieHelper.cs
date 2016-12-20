@@ -18,7 +18,7 @@ namespace NewWorkbench.CommonLibrary
             if (cookie != null)
             {
                 TimeSpan ts = new TimeSpan(-1, 0, 0, 0);
-                cookie.Expires = DateTime.Now.Add(ts);
+                cookie.Expires = System.DateTime.Now.Add(ts);
                 HttpContext.Current.Response.AppendCookie(cookie);
                 HttpContext.Current.Request.Cookies.Remove(cookiename);
             }
@@ -70,7 +70,7 @@ namespace NewWorkbench.CommonLibrary
             {
                 cookie.Domain = siteurl.Replace("www.", "");
             }
-            if (days != null && days > 0) { cookie.Expires = DateTime.Now.AddDays(Convert.ToInt32(days)); }
+            if (days != null && days > 0) { cookie.Expires = System.DateTime.Now.AddDays(Convert.ToInt32(days)); }
             HttpContext.Current.Response.AppendCookie(cookie);
 
         }
@@ -96,7 +96,7 @@ namespace NewWorkbench.CommonLibrary
             {
                 cookie.Domain = siteurl.Replace("www.", "");
             }
-            if (expires != null && expires > 0) { cookie.Expires = DateTime.Now.AddDays(Convert.ToInt32(expires)); }
+            if (expires != null && expires > 0) { cookie.Expires = System.DateTime.Now.AddDays(Convert.ToInt32(expires)); }
             HttpContext.Current.Response.AppendCookie(cookie);
 
         }

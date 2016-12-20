@@ -244,7 +244,7 @@ namespace NewWorkbench.CommonLibrary
                         string fileName = parentPath + file.Substring(file.LastIndexOf("\\") + 1);
                         ZipEntry entry = new ZipEntry(fileName);
 
-                        entry.DateTime = DateTime.Now;
+                        entry.DateTime = System.DateTime.Now;
                         entry.Size = fs.Length;
 
                         fs.Close();
@@ -289,7 +289,7 @@ namespace NewWorkbench.CommonLibrary
                             fileStream.Read(array2, 0, array2.Length);
                             string name = parentPath + text.Substring(text.LastIndexOf("\\") + 1);
                             ZipEntry zipEntry = new ZipEntry(name);
-                            zipEntry.DateTime = DateTime.Now;
+                            zipEntry.DateTime = System.DateTime.Now;
                             zipEntry.Size = fileStream.Length;
                             fileStream.Close();
                             crc.Reset();

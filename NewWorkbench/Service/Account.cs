@@ -74,6 +74,10 @@ namespace NewWorkbench.Service
         public List<Domain.SYS_MODULE> Modules { get; set; }
 
 
+        /// <summary>
+        /// 用户拥有权限系统的列表
+        /// 一个用户可能拥有多个系统的权限，也全部放在这里
+        /// </summary>
         public List<string> System_Id { get; set; }
 
         #endregion

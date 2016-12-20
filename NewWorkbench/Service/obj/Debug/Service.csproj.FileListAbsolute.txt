@@ -28,6 +28,7 @@ F:\report\wes\Workbench\NewWorkbench\Service\bin\Debug\log4net.xml
 F:\report\wes\Workbench\NewWorkbench\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 F:\report\wes\Workbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.dll
 F:\report\wes\Workbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.pdb
+F:\report\wes\WesWorkbench\NewWorkbench\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Service.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Service.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.dll
@@ -35,13 +36,12 @@ F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.SqlSer
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.CommonLibrary.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Domain.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\log4net.dll
+F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\ICSharpCode.SharpZipLib.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\Newtonsoft.Json.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.CommonLibrary.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\NewWorkbench.Domain.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.xml
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\EntityFramework.SqlServer.xml
 F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\log4net.xml
-F:\report\wes\WesWorkbench\NewWorkbench\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Service\obj\Debug\NewWorkbench.Service.pdb
-F:\report\wes\WesWorkbench\NewWorkbench\Service\bin\Debug\ICSharpCode.SharpZipLib.dll

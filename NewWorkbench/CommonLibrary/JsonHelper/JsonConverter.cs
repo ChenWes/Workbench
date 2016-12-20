@@ -37,7 +37,7 @@ namespace NewWorkbench.CommonLibrary
             {
                 str = System.Text.RegularExpressions.Regex.Replace(str, @"\\/Date\((\d+)\)\\/", match =>
                 {
-                    DateTime dt = new DateTime(1970, 1, 1);
+                    System.DateTime dt = new System.DateTime(1970, 1, 1);
                     dt = dt.AddMilliseconds(long.Parse(match.Groups[1].Value));
                     dt = dt.ToLocalTime();
                     return dt.ToString("yyyy-MM-dd HH:mm:ss");
@@ -222,7 +222,7 @@ namespace NewWorkbench.CommonLibrary
                 str = String2Json(str);
                 str = "\"" + str + "\"";
             }
-            else if (type == typeof(DateTime))
+            else if (type == typeof(System.DateTime))
             {
                 str = "\"" + str + "\"";
             }

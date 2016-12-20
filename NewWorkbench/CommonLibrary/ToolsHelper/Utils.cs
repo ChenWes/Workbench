@@ -244,12 +244,12 @@ namespace NewWorkbench.CommonLibrary
         /// <param name="str">要转换的字符串</param>
         /// <param name="defValue">缺省值</param>
         /// <returns>转换后的int类型结果</returns>
-        public static DateTime StrToDateTime(string str, DateTime defValue)
+        public static System.DateTime StrToDateTime(string str, System.DateTime defValue)
         {
             if (!string.IsNullOrEmpty(str))
             {
-                DateTime dateTime;
-                if (DateTime.TryParse(str, out dateTime))
+                System.DateTime dateTime;
+                if (System.DateTime.TryParse(str, out dateTime))
                     return dateTime;
             }
             return defValue;
@@ -260,9 +260,9 @@ namespace NewWorkbench.CommonLibrary
         /// </summary>
         /// <param name="str">要转换的字符串</param>
         /// <returns>转换后的int类型结果</returns>
-        public static DateTime StrToDateTime(string str)
+        public static System.DateTime StrToDateTime(string str)
         {
-            return StrToDateTime(str, DateTime.Now);
+            return StrToDateTime(str, System.DateTime.Now);
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace NewWorkbench.CommonLibrary
         /// </summary>
         /// <param name="obj">要转换的对象</param>
         /// <returns>转换后的int类型结果</returns>
-        public static DateTime ObjectToDateTime(object obj)
+        public static System.DateTime ObjectToDateTime(object obj)
         {
             return StrToDateTime(obj.ToString());
         }
@@ -281,7 +281,7 @@ namespace NewWorkbench.CommonLibrary
         /// <param name="obj">要转换的对象</param>
         /// <param name="defValue">缺省值</param>
         /// <returns>转换后的int类型结果</returns>
-        public static DateTime ObjectToDateTime(object obj, DateTime defValue)
+        public static System.DateTime ObjectToDateTime(object obj, System.DateTime defValue)
         {
             return StrToDateTime(obj.ToString(), defValue);
         }
@@ -472,7 +472,7 @@ namespace NewWorkbench.CommonLibrary
         public static string GetRamCode()
         {
             #region
-            return DateTime.Now.ToString("yyyyMMddHHmmssffff");
+            return System.DateTime.Now.ToString("yyyyMMddHHmmssffff");
             #endregion
         }
 
@@ -517,7 +517,7 @@ namespace NewWorkbench.CommonLibrary
         {
             string str = string.Empty;
             int rep = 0;
-            long num2 = DateTime.Now.Ticks + rep;
+            long num2 = System.DateTime.Now.Ticks + rep;
             rep++;
             Random random = new Random(((int)(((ulong)num2) & 0xffffffffL)) | ((int)(num2 >> rep)));
             for (int i = 0; i < codeCount; i++)
@@ -543,7 +543,7 @@ namespace NewWorkbench.CommonLibrary
         /// <returns></returns>
         public static string GetOrderNumber()
         {
-            string num = DateTime.Now.ToString("yyMMddHHmmss");//yyyyMMddHHmmssms
+            string num = System.DateTime.Now.ToString("yyMMddHHmmss");//yyyyMMddHHmmssms
             return num + Number(2).ToString();
         }
 
@@ -1448,7 +1448,7 @@ namespace NewWorkbench.CommonLibrary
                 cookie = new HttpCookie(strName);
             }
             cookie[key] = UrlEncode(strValue);
-            cookie.Expires = DateTime.Now.AddMinutes(expires);
+            cookie.Expires = System.DateTime.Now.AddMinutes(expires);
             HttpContext.Current.Response.AppendCookie(cookie);
         }
 
@@ -1466,7 +1466,7 @@ namespace NewWorkbench.CommonLibrary
                 cookie = new HttpCookie(strName);
             }
             cookie.Value = UrlEncode(strValue);
-            cookie.Expires = DateTime.Now.AddMinutes(expires);
+            cookie.Expires = System.DateTime.Now.AddMinutes(expires);
             HttpContext.Current.Response.AppendCookie(cookie);
         }
         /// <summary>
@@ -1481,7 +1481,7 @@ namespace NewWorkbench.CommonLibrary
             {
                 cookie = new HttpCookie(strName);
             }
-            cookie.Expires = DateTime.Now.AddDays(expires);
+            cookie.Expires = System.DateTime.Now.AddDays(expires);
             HttpContext.Current.Response.AppendCookie(cookie);
         }
 
@@ -1501,7 +1501,7 @@ namespace NewWorkbench.CommonLibrary
             cookie.Value = strValue;
             if (expires > 0)
             {
-                cookie.Expires = DateTime.Now.AddMinutes((double)expires);
+                cookie.Expires = System.DateTime.Now.AddMinutes((double)expires);
             }
             HttpContext.Current.Response.AppendCookie(cookie);
         }

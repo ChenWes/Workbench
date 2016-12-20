@@ -70,7 +70,7 @@ namespace NewWorkbench.Controllers
         /// 权限认证
         /// </summary>
         public override void OnAuthorization(AuthorizationContext filterContext)
-        {
+        {            
             //1、判断模块是否对应
             if (string.IsNullOrEmpty(ModuleAlias))
             {

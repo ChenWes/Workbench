@@ -41,6 +41,9 @@ namespace NewWorkbench.Domain
         public string UPDATEUSER { get; set; }
         public Nullable<System.DateTime> UPDATEDATE { get; set; }
         public string LastLoginIP { get; set; }
+
+        //¼Ç×¡ÎÒ
+        public bool Remeberme { get; set; }
     
         public virtual ICollection<SYS_POST_USER> SYS_POST_USER { get; set; }
         public virtual ICollection<SYS_USER_DEPARTMENT> SYS_USER_DEPARTMENT { get; set; }

@@ -12,10 +12,9 @@ F:\report\wes\Workbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.Common
 F:\report\wes\Workbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\NewWorkbench.CommonLibrary.dll
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\NewWorkbench.CommonLibrary.pdb
+F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\ICSharpCode.SharpZipLib.dll
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\log4net.dll
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\Newtonsoft.Json.dll
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\log4net.xml
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.dll
 F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\obj\Debug\NewWorkbench.CommonLibrary.pdb
-F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\bin\Debug\ICSharpCode.SharpZipLib.dll
-F:\report\wes\WesWorkbench\NewWorkbench\CommonLibrary\obj\Debug\CommonLibrary.csprojResolveAssemblyReference.cache

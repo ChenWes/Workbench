@@ -86,12 +86,14 @@ F:\report\wes\Workbench\NewWorkbench\NewWorkbench\bin\EntityFramework.xml
 F:\report\wes\Workbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.csprojResolveAssemblyReference.cache
 F:\report\wes\Workbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.dll
 F:\report\wes\Workbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.pdb
+F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\NewWorkbench.dll.config
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\NewWorkbench.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\NewWorkbench.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\Antlr3.Runtime.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\Common.Logging.Core.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\Common.Logging.dll
+F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\ICSharpCode.SharpZipLib.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\log4net.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\Microsoft.Web.Infrastructure.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\Newtonsoft.Json.dll
@@ -140,7 +142,5 @@ F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\System.Web.WebPages.Dep
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\System.Web.WebPages.Razor.xml
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\Antlr3.Runtime.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\EntityFramework.xml
-F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.pdb
-F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\ICSharpCode.SharpZipLib.dll

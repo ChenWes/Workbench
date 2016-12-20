@@ -22,8 +22,6 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
 
         #region 声明容器
 
-        //IUserManage UserManage { get; set; }
-
         CommonLibrary.Log.IExtLog log = CommonLibrary.Log.ExtLogManager.GetLogger("dblog");
 
         #endregion
@@ -70,11 +68,21 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
 
                             CommonLibrary.SessionHelper.SetSession("CurrentUser", account);
 
-                            //记录用户信息到Cookies
-                            string cookievalue = "{\"id\":\"" + account.Id + "\",\"username\":\"" + account.LogName +
-                                                                              "\",\"password\":\"" + account.PassWord + "\",\"ToKen\":\"" +
-                                                                              Session.SessionID + "\"}";
-                            CookieHelper.SetCookie(mc_RemberMeCode, new CommonLibrary.AESCrypt().Encrypt(cookievalue), null);
+                            #region check remeber
+                            if (item.Remeberme)
+                            {
+                                //记录用户信息到Cookies
+                                string cookievalue = "{\"id\":\"" + account.Id + "\",\"username\":\"" + account.LogName + "\",\"password\":\"" + account.PassWord + "\",\"ToKen\":\"" + Session.SessionID + "\"}";
+
+                                CookieHelper.SetCookie(mc_RemberMeCode, new CommonLibrary.AESCrypt().Encrypt(cookievalue), null);
+                            }
+                            else
+                            {
+                                CookieHelper.ClearCookie(mc_RemberMeCode);
+                            }
+
+                            #endregion
+
                             users.LastLoginIP = Utils.GetIP();
                             new UserManage().Update(users);
 
@@ -128,7 +136,9 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
 
         public ActionResult LoginOut()
         {
-            SessionHelper.Remove("CurrentUser");            
+            SessionHelper.Remove("CurrentUser");
+            SessionHelper.Delete("CurrentUser");
+
             return View("index");
         }
 

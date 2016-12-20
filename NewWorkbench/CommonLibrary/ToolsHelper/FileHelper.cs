@@ -26,7 +26,7 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             dt.Columns.Add("isImage", typeof(bool));
             dt.Columns.Add("fullname", typeof(string));
             dt.Columns.Add("path", typeof(string));
-            dt.Columns.Add("time", typeof(DateTime));
+            dt.Columns.Add("time", typeof(System.DateTime));
 
             string[] folders = Directory.GetDirectories(Path, "*", SearchOption.AllDirectories);
 
@@ -46,7 +46,7 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
                 FileInfo fi;
                 string FileName = string.Empty, FileExt = string.Empty, FileSize = string.Empty, FileIcon = string.Empty, FileFullName = string.Empty, FilePath = string.Empty;
                 bool IsFloder = false, IsImage = false;
-                DateTime FileModify;
+                System.DateTime FileModify;
                 try
                 {
                     foreach (FileSystemInfo fsi in dirinfo.GetFiles())
@@ -109,14 +109,14 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             dt.Columns.Add("isImage", typeof(bool));
             dt.Columns.Add("fullname", typeof(string));
             dt.Columns.Add("path", typeof(string));
-            dt.Columns.Add("time", typeof(DateTime));
+            dt.Columns.Add("time", typeof(System.DateTime));
 
             DirectoryInfo dirinfo = new DirectoryInfo(Path);
             FileInfo fi;
             DirectoryInfo dir;
             string FileName = string.Empty, FileExt = string.Empty, FileSize = string.Empty, FileIcon = string.Empty, FileFullName = string.Empty, FilePath = string.Empty;
             bool IsFloder = false, IsImage = false;
-            DateTime FileModify;
+            System.DateTime FileModify;
             try
             {
                 foreach (FileSystemInfo fsi in dirinfo.GetFileSystemInfos())
@@ -372,6 +372,7 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             }
         }
 
+        
         public static void DeleteDirectory(string directoryPath)
         {
             if (IsExistDirectory(directoryPath))
@@ -380,6 +381,10 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             }
         }
 
+        /// <summary>
+        /// 清除目录
+        /// </summary>
+        /// <param name="directoryPath">目录路径</param>
         public static void ClearDirectory(string directoryPath)
         {
             if (FileHelper.IsExistDirectory(directoryPath))
@@ -397,6 +402,12 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             }
         }
 
+        /// <summary>
+        /// 文件移动
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        /// <returns></returns>
         public static bool FileMove(string source, string destination)
         {
             bool result = false;
@@ -484,11 +495,6 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             return directories;
         }
 
-        /// <summary>
-        /// 获取文件容量大小
-        /// </summary>
-        /// <param name="fi"></param>
-        /// <returns></returns>
         public static string GetDiyFileSize(FileInfo fi)
         {
             string result = string.Empty;
@@ -538,6 +544,11 @@ namespace NewWorkbench.CommonLibrary.ToolsHelper
             return result;
         }
 
+        /// <summary>
+        /// 获取文件容量大小
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <returns></returns>
         public static long GetFileSize(string filePath)
         {
             FileInfo fileInfo = new FileInfo(filePath);

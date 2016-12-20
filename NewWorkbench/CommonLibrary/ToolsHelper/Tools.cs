@@ -95,7 +95,7 @@ namespace NewWorkbench.CommonLibrary
         /// <param name="DateTime1">日期一。</param>
         /// <param name="DateTime2">日期二。</param>
         /// <returns>日期间隔TimeSpan。</returns>
-        public static TimeSpan DateDiff(DateTime DateTime1, DateTime DateTime2)
+        public static TimeSpan DateDiff(System.DateTime DateTime1, System.DateTime DateTime2)
         {
             TimeSpan ts1 = new TimeSpan(DateTime1.Ticks);
             TimeSpan ts2 = new TimeSpan(DateTime2.Ticks);
@@ -113,7 +113,7 @@ namespace NewWorkbench.CommonLibrary
         /// <param name="dateTime1">日期时间</param>
         /// <param name="dateMode">显示模式</param>
         /// <returns>0-9种模式的日期</returns>
-        public static string FormatDate(DateTime dateTime1, string dateMode)
+        public static string FormatDate(System.DateTime dateTime1, string dateMode)
         {
             switch (dateMode)
             {
@@ -152,11 +152,11 @@ namespace NewWorkbench.CommonLibrary
         /// <param name="time1">起始日期</param>
         /// <param name="time2">结束日期</param>
         /// <returns>间隔日期之间的 随机日期</returns>
-        public static DateTime GetRandomTime(DateTime time1, DateTime time2)
+        public static System.DateTime GetRandomTime(System.DateTime time1, System.DateTime time2)
         {
             Random random = new Random();
-            DateTime minTime = new DateTime();
-            DateTime maxTime = new DateTime();
+            System.DateTime minTime = new System.DateTime();
+            System.DateTime maxTime = new System.DateTime();
 
             System.TimeSpan ts = new System.TimeSpan(time1.Ticks - time2.Ticks);
 
@@ -208,7 +208,7 @@ namespace NewWorkbench.CommonLibrary
         /// </summary>
         public static string GetRandomTimeSpan()
         {
-            TimeSpan ts = DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            TimeSpan ts = System.DateTime.Now - new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             return Convert.ToInt64(ts.TotalSeconds).ToString();
         }
 
@@ -544,7 +544,7 @@ namespace NewWorkbench.CommonLibrary
             //如果查找到汉字"今",则认为是当前日期
             if (date.IndexOf("今") != -1)
             {
-                date = DateTime.Now.ToString();
+                date = System.DateTime.Now.ToString();
             }
 
             try
