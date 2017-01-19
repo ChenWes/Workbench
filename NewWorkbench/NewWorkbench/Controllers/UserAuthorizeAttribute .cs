@@ -35,7 +35,6 @@ namespace NewWorkbench.Controllers
 
         #endregion
 
-
         /// <summary>
         /// 获取操作权限Json字符串，供视图JS判断使用
         /// </summary>
@@ -68,31 +67,14 @@ namespace NewWorkbench.Controllers
         }
 
         /// <summary>
-        /// 模型去重，非常重要
-        /// add yuangang by 2016-05-25
-        /// </summary>
-        public class ModuleDistinct : IEqualityComparer<Domain.SYS_MODULE>
-        {
-            public bool Equals(Domain.SYS_MODULE x, Domain.SYS_MODULE y)
-            {
-                return x.ID == y.ID;
-            }
-
-            public int GetHashCode(Domain.SYS_MODULE obj)
-            {
-                return obj.ToString().GetHashCode();
-            }
-        }
-
-        /// <summary>
         /// 权限认证
         /// </summary>
         public override void OnAuthorization(AuthorizationContext filterContext)
-        {
+        {            
             //1、判断模块是否对应
             if (string.IsNullOrEmpty(ModuleAlias))
             {
-                filterContext.HttpContext.Response.Write(" <script type='text/javascript'> alert('^您没有访问该页面的权限！'); </script>");
+                filterContext.HttpContext.Response.Write(" <script type='text/javascript'> alert('该页面暂不开放访问！'); </script>");
                 filterContext.RequestContext.HttpContext.Response.End();
                 filterContext.Result = new EmptyResult();
                 return;
@@ -101,7 +83,7 @@ namespace NewWorkbench.Controllers
             //2、判断用户是否存在
             if (baseController.CurrentUser == null)
             {
-                filterContext.HttpContext.Response.Write(" <script type='text/javascript'> alert('^登录已过期，请重新登录！');window.top.location='/'; </script>");
+                filterContext.HttpContext.Response.Write(" <script type='text/javascript'> alert('登录已过期，请重新登录！');window.top.location='/'; </script>");
                 filterContext.RequestContext.HttpContext.Response.End();
                 filterContext.Result = new EmptyResult();
                 return;
@@ -140,6 +122,22 @@ namespace NewWorkbench.Controllers
             filterContext.Controller.ViewData["PermissionList"] = GetPermissByJson(baseController.CurrentUser, moduleId);
         }
 
-        
+    }
+
+    /// <summary>
+    /// 模型去重，非常重要
+    /// add yuangang by 2016-05-25
+    /// </summary>
+    public class ModuleDistinct : IEqualityComparer<Domain.SYS_MODULE>
+    {
+        public bool Equals(Domain.SYS_MODULE x, Domain.SYS_MODULE y)
+        {
+            return x.ID == y.ID;
+        }
+
+        public int GetHashCode(Domain.SYS_MODULE obj)
+        {
+            return obj.ToString().GetHashCode();
+        }
     }
 }

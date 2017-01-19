@@ -20,6 +20,11 @@ namespace NewWorkbench.LocalFrom
         private void btn_check_Click(object sender, EventArgs e)
         {
             txt_password_D.Text = new CommonLibrary.AESCrypt().Encrypt(txt_password.Text.Trim());
+
+            txt_pass.Text = new CommonLibrary.DESCrypt().Encrypt(txt_password.Text.Trim());
+
+
+            
         }
     }
 }

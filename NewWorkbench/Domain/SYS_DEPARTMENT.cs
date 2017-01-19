@@ -18,6 +18,7 @@ namespace NewWorkbench.Domain
         {
             this.SYS_POST_DEPARTMENT = new HashSet<SYS_POST_DEPARTMENT>();
             this.SYS_USER_DEPARTMENT = new HashSet<SYS_USER_DEPARTMENT>();
+            this.SYS_COMPANY_DEPARTMENT = new HashSet<SYS_COMPANY_DEPARTMENT>();
         }
     
         public string ID { get; set; }
@@ -34,5 +35,6 @@ namespace NewWorkbench.Domain
     
         public virtual ICollection<SYS_POST_DEPARTMENT> SYS_POST_DEPARTMENT { get; set; }
         public virtual ICollection<SYS_USER_DEPARTMENT> SYS_USER_DEPARTMENT { get; set; }
+        public virtual ICollection<SYS_COMPANY_DEPARTMENT> SYS_COMPANY_DEPARTMENT { get; set; }
     }
 }

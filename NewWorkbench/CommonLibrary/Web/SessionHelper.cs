@@ -114,7 +114,7 @@ namespace NewWorkbench.CommonLibrary
         /// 删除某个Session对象
         /// </summary>
         /// <param name="strSessionName">Session对象名称</param>
-        public static void Del(string strSessionName)
+        public static void Delete(string strSessionName)
         {
             HttpContext.Current.Session[strSessionName] = null;
         }
