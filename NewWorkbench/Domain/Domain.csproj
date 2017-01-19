@@ -72,6 +72,12 @@
     <Compile Include="SYS_CODE_AREA.cs">
       <DependentUpon>NewWorkbench.tt</DependentUpon>
     </Compile>
+    <Compile Include="SYS_COMPANY.cs">
+      <DependentUpon>NewWorkbench.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_COMPANY_DEPARTMENT.cs">
+      <DependentUpon>NewWorkbench.tt</DependentUpon>
+    </Compile>
     <Compile Include="SYS_DEPARTMENT.cs">
       <DependentUpon>NewWorkbench.tt</DependentUpon>
     </Compile>
@@ -109,6 +115,9 @@
       <DependentUpon>NewWorkbench.tt</DependentUpon>
     </Compile>
     <Compile Include="SYS_USER_DEPARTMENT.cs">
+      <DependentUpon>NewWorkbench.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_USER_ONLINE.cs">
       <DependentUpon>NewWorkbench.tt</DependentUpon>
     </Compile>
     <Compile Include="SYS_USER_PERMISSION.cs">

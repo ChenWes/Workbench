@@ -187,6 +187,7 @@ namespace NewWorkbench.CommonLibrary
         }
 
         #region 私有方法
+
         private string byte2HexString(byte[] bytes)
         {
             StringBuilder sb = new StringBuilder();
@@ -214,6 +215,7 @@ namespace NewWorkbench.CommonLibrary
         {
             return Encoding.UTF8.GetString(bytes);
         }
+
         #endregion
 
 

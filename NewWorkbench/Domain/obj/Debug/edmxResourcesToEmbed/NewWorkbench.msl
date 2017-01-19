@@ -263,5 +263,37 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SYS_USER_ONLINE">
+      <EntityTypeMapping TypeName="NewDBModel.SYS_USER_ONLINE">
+        <MappingFragment StoreEntitySet="SYS_USER_ONLINE">
+          <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="OfflineDate" ColumnName="OfflineDate" />
+          <ScalarProperty Name="OnlineDate" ColumnName="OnlineDate" />
+          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
+          <ScalarProperty Name="ConnectId" ColumnName="ConnectId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_COMPANY">
+      <EntityTypeMapping TypeName="NewDBModel.SYS_COMPANY">
+        <MappingFragment StoreEntitySet="SYS_COMPANY">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_COMPANY_DEPARTMENT">
+      <EntityTypeMapping TypeName="NewDBModel.SYS_COMPANY_DEPARTMENT">
+        <MappingFragment StoreEntitySet="SYS_COMPANY_DEPARTMENT">
+          <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

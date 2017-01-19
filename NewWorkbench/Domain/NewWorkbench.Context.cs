@@ -42,5 +42,8 @@ namespace NewWorkbench.Domain
         public virtual DbSet<SYS_USER_PERMISSION> SYS_USER_PERMISSION { get; set; }
         public virtual DbSet<SYS_USER_ROLE> SYS_USER_ROLE { get; set; }
         public virtual DbSet<SYS_USERINFO> SYS_USERINFO { get; set; }
+        public virtual DbSet<SYS_USER_ONLINE> SYS_USER_ONLINE { get; set; }
+        public virtual DbSet<SYS_COMPANY> SYS_COMPANY { get; set; }
+        public virtual DbSet<SYS_COMPANY_DEPARTMENT> SYS_COMPANY_DEPARTMENT { get; set; }
     }
 }

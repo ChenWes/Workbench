@@ -23,5 +23,17 @@ namespace NewWorkbench.LocalFrom
             FrmPassword newfrom = new FrmPassword();
             newfrom.Show();
         }
+
+        private void btn_checkPinYin_Click(object sender, EventArgs e)
+        {
+            FrmPinyin newfrom = new FrmPinyin();
+            newfrom.Show();
+        }
+
+        private void btn_zip_Click(object sender, EventArgs e)
+        {
+            FrmZip newfrom = new FrmZip();
+            newfrom.Show();
+        }
     }
 }

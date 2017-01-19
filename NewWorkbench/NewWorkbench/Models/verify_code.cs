@@ -54,7 +54,7 @@ namespace NewWorkbench.Models
         /// <param name="VNum">VNum是一个随机数</param>  
         public MemoryStream Create(out string VNum)
         {
-            VNum = RndNum(4);
+            VNum = RndNum(6);
             Bitmap Img = null;
             Graphics g = null;
             MemoryStream ms = null;
