@@ -50,26 +50,32 @@
     <Compile Include="Account.cs" />
     <Compile Include="DatabaseExtensions.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="IService\SysManage\IDepartmentManage.cs" />
-    <Compile Include="IService\SysManage\IModuleManage.cs" />
-    <Compile Include="IService\SysManage\IPermissionManage.cs" />
-    <Compile Include="IService\SysManage\IPostUserManage.cs" />
-    <Compile Include="IService\SysManage\IUserDepartmentManage.cs" />
-    <Compile Include="IService\SysManage\IUserInfoManage.cs" />
-    <Compile Include="IService\SysManage\IUserPermissionManage.cs" />
-    <Compile Include="IService\SysManage\IUserRoleManage.cs" />
+    <Compile Include="IService\SystemManage\ICodeManage.cs" />
+    <Compile Include="IService\SystemManage\IDepartmentManage.cs" />
+    <Compile Include="IService\SystemManage\IModuleManage.cs" />
+    <Compile Include="IService\SystemManage\IPermissionManage.cs" />
+    <Compile Include="IService\SystemManage\IPostUserManage.cs" />
+    <Compile Include="IService\SystemManage\ISystemManage.cs" />
+    <Compile Include="IService\SystemManage\IUserDepartmentManage.cs" />
+    <Compile Include="IService\SystemManage\IUserInfoManage.cs" />
+    <Compile Include="IService\SystemManage\IUserOnlineManage.cs" />
+    <Compile Include="IService\SystemManage\IUserPermissionManage.cs" />
+    <Compile Include="IService\SystemManage\IUserRoleManage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryBase.cs" />
-    <Compile Include="IService\SysManage\IUserManage.cs" />
-    <Compile Include="ServiceImp\SysManage\DepartmentManage.cs" />
-    <Compile Include="ServiceImp\SysManage\ModuleManage.cs" />
-    <Compile Include="ServiceImp\SysManage\PermissionManage.cs" />
-    <Compile Include="ServiceImp\SysManage\PostUserManage.cs" />
-    <Compile Include="ServiceImp\SysManage\UserDepartmentManage.cs" />
-    <Compile Include="ServiceImp\SysManage\UserInfoManage.cs" />
-    <Compile Include="ServiceImp\SysManage\UserManage.cs" />
-    <Compile Include="ServiceImp\SysManage\UserPermissionManage.cs" />
-    <Compile Include="ServiceImp\SysManage\UserRoleManage.cs" />
+    <Compile Include="IService\SystemManage\IUserManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\CodeManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\DepartmentManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\ModuleManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\PermissionManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\PostUserManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\SystemManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\UserDepartmentManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\UserInfoManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\UserManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\UserOnlineManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\UserPermissionManage.cs" />
+    <Compile Include="ServiceImp\SystemManage\UserRoleManage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
@@ -82,8 +88,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="IService\ComManage\" />
-    <Folder Include="ServiceImp\ComManage\" />
+    <Folder Include="IService\CommonManage\" />
+    <Folder Include="ServiceImp\CommonManage\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Config\ComService.xml" />

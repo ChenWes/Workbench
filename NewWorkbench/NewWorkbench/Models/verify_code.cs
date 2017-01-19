@@ -19,12 +19,22 @@ namespace NewWorkbench.Models
         /// </summary>  
         /// <param name="VcodeNum">参数是随机数的位数</param>  
         /// <returns>返回一个随机数字符串</returns>  
-        private string RndNum(int VcodeNum)
+        public string RndNum(int VcodeNum, string pi_VcodeLib)
         {
-            //验证码可以显示的字符集合  
-            string Vchar = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,p" +
-                ",q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,P,P,Q" +
-                ",R,S,T,U,V,W,X,Y,Z";
+            string Vchar = string.Empty;
+
+            if (!string.IsNullOrEmpty(pi_VcodeLib))
+            {
+                //验证码可以显示的字符集合  
+                Vchar = pi_VcodeLib;
+            }
+            else
+            {
+                Vchar = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,p" +
+                   ",q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,P,P,Q" +
+                   ",R,S,T,U,V,W,X,Y,Z";
+
+            }
             string[] VcArray = Vchar.Split(new Char[] { ',' });//拆分成数组  
             string VNum = "";//产生的随机数  
             int temp = -1;//记录上次随机数值，尽量避避免生产几个一样的随机数  
@@ -48,13 +58,18 @@ namespace NewWorkbench.Models
             return VNum;
         }
 
+        public string RndNum(int VcodeNum)
+        {
+            return RndNum(VcodeNum, null);
+        }
+
         /// <summary>  
         /// 该方法是将生成的随机数写入图像文件  
         /// </summary>  
         /// <param name="VNum">VNum是一个随机数</param>  
         public MemoryStream Create(out string VNum)
         {
-            VNum = RndNum(4);
+            VNum = RndNum(6, null);
             Bitmap Img = null;
             Graphics g = null;
             MemoryStream ms = null;

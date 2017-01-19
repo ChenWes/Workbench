@@ -21,6 +21,7 @@ namespace NewWorkbench.Domain
             this.SYS_USER_PERMISSION = new HashSet<SYS_USER_PERMISSION>();
             this.SYS_USER_ROLE = new HashSet<SYS_USER_ROLE>();
             this.SYS_USERINFO = new HashSet<SYS_USERINFO>();
+            this.SYS_USER_ONLINE = new HashSet<SYS_USER_ONLINE>();
         }
     
         public int ID { get; set; }
@@ -40,11 +41,15 @@ namespace NewWorkbench.Domain
         public string UPDATEUSER { get; set; }
         public Nullable<System.DateTime> UPDATEDATE { get; set; }
         public string LastLoginIP { get; set; }
+
+        //¼Ç×¡ÎÒ
+        public bool Remeberme { get; set; }
     
         public virtual ICollection<SYS_POST_USER> SYS_POST_USER { get; set; }
         public virtual ICollection<SYS_USER_DEPARTMENT> SYS_USER_DEPARTMENT { get; set; }
         public virtual ICollection<SYS_USER_PERMISSION> SYS_USER_PERMISSION { get; set; }
         public virtual ICollection<SYS_USER_ROLE> SYS_USER_ROLE { get; set; }
         public virtual ICollection<SYS_USERINFO> SYS_USERINFO { get; set; }
+        public virtual ICollection<SYS_USER_ONLINE> SYS_USER_ONLINE { get; set; }
     }
 }

@@ -26,6 +26,7 @@
     <NavigationProperty Name="SYS_USER_PERMISSION" Relationship="NewDBModel.FK_SYS_USER_PERMISSION_USERID" FromRole="SYS_USER" ToRole="SYS_USER_PERMISSION" />
     <NavigationProperty Name="SYS_USER_ROLE" Relationship="NewDBModel.FK_SYS_USER_ROLE_USERID" FromRole="SYS_USER" ToRole="SYS_USER_ROLE" />
     <NavigationProperty Name="SYS_USERINFO" Relationship="NewDBModel.FK_SYS_USERINFO_SYSUSERID" FromRole="SYS_USER" ToRole="SYS_USERINFO" />
+    <NavigationProperty Name="SYS_USER_ONLINE" Relationship="NewDBModel.FK_SYS_USER_ONLINE_SYS_USER" FromRole="SYS_USER" ToRole="SYS_USER_ONLINE" />
   </EntityType>
   <EntityContainer Name="NewDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="SYS_USER" EntityType="Self.SYS_USER" />
@@ -105,6 +106,21 @@
       <End Role="SYS_USER" EntitySet="SYS_USER" />
       <End Role="SYS_USERINFO" EntitySet="SYS_USERINFO" />
     </AssociationSet>
+    <EntitySet Name="SYS_USER_ONLINE" EntityType="NewDBModel.SYS_USER_ONLINE" />
+    <AssociationSet Name="FK_SYS_USER_ONLINE_SYS_USER" Association="NewDBModel.FK_SYS_USER_ONLINE_SYS_USER">
+      <End Role="SYS_USER" EntitySet="SYS_USER" />
+      <End Role="SYS_USER_ONLINE" EntitySet="SYS_USER_ONLINE" />
+    </AssociationSet>
+    <EntitySet Name="SYS_COMPANY" EntityType="NewDBModel.SYS_COMPANY" />
+    <EntitySet Name="SYS_COMPANY_DEPARTMENT" EntityType="NewDBModel.SYS_COMPANY_DEPARTMENT" />
+    <AssociationSet Name="FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY" Association="NewDBModel.FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY">
+      <End Role="SYS_COMPANY" EntitySet="SYS_COMPANY" />
+      <End Role="SYS_COMPANY_DEPARTMENT" EntitySet="SYS_COMPANY_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT" Association="NewDBModel.FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT">
+      <End Role="SYS_DEPARTMENT" EntitySet="SYS_DEPARTMENT" />
+      <End Role="SYS_COMPANY_DEPARTMENT" EntitySet="SYS_COMPANY_DEPARTMENT" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="SYS_CODE">
     <Key>
@@ -149,6 +165,7 @@
     <Property Name="PARENTCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SYS_POST_DEPARTMENT" Relationship="NewDBModel.FK_SYS_POST_DEPARTMENT_DPTID" FromRole="SYS_DEPARTMENT" ToRole="SYS_POST_DEPARTMENT" />
     <NavigationProperty Name="SYS_USER_DEPARTMENT" Relationship="NewDBModel.FK_SYS_USER_DEPARTMENT_DPTID" FromRole="SYS_DEPARTMENT" ToRole="SYS_USER_DEPARTMENT" />
+    <NavigationProperty Name="SYS_COMPANY_DEPARTMENT" Relationship="NewDBModel.FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT" FromRole="SYS_DEPARTMENT" ToRole="SYS_COMPANY_DEPARTMENT" />
   </EntityType>
   <EntityType Name="SYS_LOG">
     <Key>
@@ -531,6 +548,79 @@
       </Principal>
       <Dependent Role="SYS_USERINFO">
         <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SYS_USER_ONLINE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FK_UserId" />
+      <PropertyRef Name="OnlineDate" />
+      <PropertyRef Name="IsOnline" />
+      <PropertyRef Name="UserIP" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConnectId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FK_UserId" Type="Int32" Nullable="false" />
+    <Property Name="OnlineDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OfflineDate" Type="DateTime" Precision="3" />
+    <Property Name="IsOnline" Type="Boolean" Nullable="false" />
+    <Property Name="UserIP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SYS_USER" Relationship="NewDBModel.FK_SYS_USER_ONLINE_SYS_USER" FromRole="SYS_USER_ONLINE" ToRole="SYS_USER" />
+  </EntityType>
+  <Association Name="FK_SYS_USER_ONLINE_SYS_USER">
+    <End Type="NewDBModel.SYS_USER" Role="SYS_USER" Multiplicity="1" />
+    <End Type="NewDBModel.SYS_USER_ONLINE" Role="SYS_USER_ONLINE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYS_USER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SYS_USER_ONLINE">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SYS_COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="SYS_COMPANY_DEPARTMENT" Relationship="NewDBModel.FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY" FromRole="SYS_COMPANY" ToRole="SYS_COMPANY_DEPARTMENT" />
+  </EntityType>
+  <EntityType Name="SYS_COMPANY_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMPANY_ID" Type="Int32" />
+    <Property Name="DEPARTMENT_ID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SYS_COMPANY" Relationship="NewDBModel.FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY" FromRole="SYS_COMPANY_DEPARTMENT" ToRole="SYS_COMPANY" />
+    <NavigationProperty Name="SYS_DEPARTMENT" Relationship="NewDBModel.FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT" FromRole="SYS_COMPANY_DEPARTMENT" ToRole="SYS_DEPARTMENT" />
+  </EntityType>
+  <Association Name="FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY">
+    <End Type="NewDBModel.SYS_COMPANY" Role="SYS_COMPANY" Multiplicity="0..1" />
+    <End Type="NewDBModel.SYS_COMPANY_DEPARTMENT" Role="SYS_COMPANY_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYS_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SYS_COMPANY_DEPARTMENT">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT">
+    <End Type="NewDBModel.SYS_DEPARTMENT" Role="SYS_DEPARTMENT" Multiplicity="0..1" />
+    <End Type="NewDBModel.SYS_COMPANY_DEPARTMENT" Role="SYS_COMPANY_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYS_DEPARTMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SYS_COMPANY_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

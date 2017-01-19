@@ -5,9 +5,10 @@ namespace NewWorkbench.CommonLibrary
     /// <summary>
     /// 操作正则表达式的公共类
     /// </summary>    
-    public class RegexHelper
+    public static class RegexHelper
     {
         #region 验证输入字符串是否与模式字符串匹配
+
         /// <summary>
         /// 验证输入字符串是否与模式字符串匹配，匹配返回true
         /// </summary>
@@ -28,6 +29,7 @@ namespace NewWorkbench.CommonLibrary
         {
             return Regex.IsMatch(input, pattern, options);
         }
+
         #endregion
     }
 }

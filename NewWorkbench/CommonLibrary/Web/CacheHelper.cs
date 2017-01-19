@@ -9,6 +9,7 @@ namespace NewWorkbench.CommonLibrary
     /// </summary>
     public class CacheHelper
     {
+        
         /// <summary>
         /// 获取数据缓存
         /// </summary>
@@ -34,13 +35,13 @@ namespace NewWorkbench.CommonLibrary
         public static void SetCache(string CacheKey, object objObject, TimeSpan Timeout)
         {
             System.Web.Caching.Cache objCache = HttpRuntime.Cache;
-            objCache.Insert(CacheKey, objObject, null, DateTime.MaxValue, Timeout, System.Web.Caching.CacheItemPriority.NotRemovable, null);
+            objCache.Insert(CacheKey, objObject, null, System.DateTime.MaxValue, Timeout, System.Web.Caching.CacheItemPriority.NotRemovable, null);
         }
 
         /// <summary>
         /// 设置数据缓存
         /// </summary>
-        public static void SetCache(string CacheKey, object objObject, DateTime absoluteExpiration, TimeSpan slidingExpiration)
+        public static void SetCache(string CacheKey, object objObject, System.DateTime absoluteExpiration, TimeSpan slidingExpiration)
         {
             System.Web.Caching.Cache objCache = HttpRuntime.Cache;
             objCache.Insert(CacheKey, objObject, null, absoluteExpiration, slidingExpiration);

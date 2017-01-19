@@ -37,6 +37,12 @@
         <AssociationConnector Association="NewDBModel.FK_SYS_USER_PERMISSION_USERID" />
         <AssociationConnector Association="NewDBModel.FK_SYS_USER_ROLE_USERID" />
         <AssociationConnector Association="NewDBModel.FK_SYS_USERINFO_SYSUSERID" />
+        <EntityTypeShape EntityType="NewDBModel.SYS_USER_ONLINE" Width="1.5" PointX="3" PointY="21.125" />
+        <AssociationConnector Association="NewDBModel.FK_SYS_USER_ONLINE_SYS_USER" />
+        <EntityTypeShape EntityType="NewDBModel.SYS_COMPANY" Width="1.5" PointX="4.5" PointY="26.75" />
+        <EntityTypeShape EntityType="NewDBModel.SYS_COMPANY_DEPARTMENT" Width="1.5" PointX="6.75" PointY="0.75" />
+        <AssociationConnector Association="NewDBModel.FK_SYS_COMPANY_DEPARTMENT_SYS_COMPANY" />
+        <AssociationConnector Association="NewDBModel.FK_SYS_COMPANY_DEPARTMENT_SYS_DEPARTMENT" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

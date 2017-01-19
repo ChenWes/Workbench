@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmZip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmZip.Designer.cs">
+      <DependentUpon>FrmZip.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,13 +63,25 @@
     <Compile Include="FrmPassword.Designer.cs">
       <DependentUpon>FrmPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPinyin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPinyin.Designer.cs">
+      <DependentUpon>FrmPinyin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmZip.resx">
+      <DependentUpon>FrmZip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPassword.resx">
       <DependentUpon>FrmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPinyin.resx">
+      <DependentUpon>FrmPinyin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
