@@ -169,6 +169,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\SystemManage\Controllers\AccountController.cs" />
+    <Compile Include="Areas\SystemManage\Controllers\CommonController.cs" />
     <Compile Include="Areas\SystemManage\Controllers\HomeController.cs" />
     <Compile Include="Areas\SystemManage\Controllers\ModuleController.cs" />
     <Compile Include="Areas\SystemManage\SystemManageAreaRegistration.cs" />
@@ -309,6 +310,7 @@
     <Content Include="Content\style.css" />
     <Content Include="Content\sweetalert.css" />
     <Content Include="Content\toastr\toastr.min.css" />
+    <Content Include="Content\ui-dialog.css" />
     <Content Include="db\sys_log.sql" />
     <Content Include="db\sys_table.sql" />
     <Content Include="db\sys_user.sql" />
@@ -363,6 +365,7 @@
     <Content Include="Content\img\browser.psd" />
     <Content Include="Areas\SystemManage\Views\Home\Index.cshtml" />
     <Content Include="Areas\SystemManage\Views\Module\Detail.cshtml" />
+    <Content Include="Areas\SystemManage\Views\Common\ShowIcon.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\contabs.js" />
     <Content Include="Scripts\content.js" />

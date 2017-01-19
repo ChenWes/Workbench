@@ -21,7 +21,7 @@
                             <i class="fa fa-pencil fa-fw"></i>
                             编辑
                         </button>
-                        <button id="delete" type="button" actionurl="/system/module/delete" action="remove" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="删除选择模块">
+                        <button id="delete" type="button" actionurl="/System/Module/Delete" action="remove" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="删除选择模块">
                             <i class="fa fa-trash-o fa-fw"></i>
                             删除
                         </button>                        
@@ -137,7 +137,7 @@
                 dig.error("每次只能修改一条记录！");
                 return;
             }
-            dig.addPage("编辑模块", "/Sys/Module/detail/" + vals, 700, 450, function () {
+            dig.addPage("编辑模块", "/System/Module/Detail/" + vals, 700, 450, function () {
                 if (this.returnValue == 'yes') {
                     location.reload();
                 }
@@ -153,9 +153,10 @@
             }
         });
     }
+
     //跳转修改
     function EditModule(n) {
-        dig.addPage("编辑模块", "/sys/module/detail/" + n, 1000, 450, function () {
+        dig.addPage("编辑模块", "/System/Module/Detail/" + n, 1000, 450, function () {
             if (this.returnValue == 'yes') {
                 location.reload();
             }

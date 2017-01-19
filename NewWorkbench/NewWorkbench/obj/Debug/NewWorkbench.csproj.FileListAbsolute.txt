@@ -86,7 +86,6 @@ F:\report\wes\Workbench\NewWorkbench\NewWorkbench\bin\EntityFramework.xml
 F:\report\wes\Workbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.csprojResolveAssemblyReference.cache
 F:\report\wes\Workbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.dll
 F:\report\wes\Workbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.pdb
-F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\NewWorkbench.dll.config
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\NewWorkbench.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\NewWorkbench.pdb
@@ -142,5 +141,6 @@ F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\System.Web.WebPages.Dep
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\System.Web.WebPages.Razor.xml
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\Antlr3.Runtime.pdb
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\bin\EntityFramework.xml
+F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.dll
 F:\report\wes\WesWorkbench\NewWorkbench\NewWorkbench\obj\Debug\NewWorkbench.pdb

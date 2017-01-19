@@ -32,8 +32,11 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
         {
             SessionHelper.Remove(mc_ValidateCode);
             CookieHelper.ClearCookie(mc_RemberMeCode);            
+            string l_RandLib="A,B,C,D,E,F,G,H,I,J,K,L,M,N,P,P,Q,R,S,T,U,V,W,X,Y,Z";
+            ViewBag.RandString = new verify_code().RndNum(1, l_RandLib);
 
             ViewBag.Title = "Login - " + CommonLibrary.ConfigHelper.GetAppSettings("SystemTitle");
+
 
             return View();
         }
@@ -140,6 +143,16 @@ namespace NewWorkbench.Areas.SystemManage.Controllers
             SessionHelper.Delete("CurrentUser");
 
             return View("index");
+        }
+
+        public ActionResult Registration()
+        {
+            return View();
+        }
+
+        public ActionResult ForgetPassWord()
+        {
+            return View();
         }
 
         #endregion

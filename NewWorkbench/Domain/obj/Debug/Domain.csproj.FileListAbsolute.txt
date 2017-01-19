@@ -23,5 +23,6 @@ F:\report\wes\WesWorkbench\NewWorkbench\Domain\bin\Debug\EntityFramework.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Domain\bin\Debug\EntityFramework.SqlServer.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Domain\bin\Debug\EntityFramework.xml
 F:\report\wes\WesWorkbench\NewWorkbench\Domain\bin\Debug\EntityFramework.SqlServer.xml
+F:\report\wes\WesWorkbench\NewWorkbench\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 F:\report\wes\WesWorkbench\NewWorkbench\Domain\obj\Debug\NewWorkbench.Domain.dll
 F:\report\wes\WesWorkbench\NewWorkbench\Domain\obj\Debug\NewWorkbench.Domain.pdb
